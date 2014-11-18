@@ -5,10 +5,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 import java.util.HashMap;
 import org.apache.commons.lang.StringUtils;
+import org.gitchina.framework.commons.fastjson.FastJson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -70,7 +72,7 @@ public class TbTypeController extends BaseController {
 	*通过id修改
 	*/
 	@RequestMapping(value = "/update.html", method = {RequestMethod.POST,RequestMethod.GET})
-	public String  update(Model model,TbType t,HttpServletRequest request,HttpServletResponse response){
+	public String  update(Model model,@FastJson TbType t,HttpServletRequest request,HttpServletResponse response){
 		try {
 			 this.tbTypeService.update(t);
 		} catch (Exception e) {
@@ -99,8 +101,9 @@ public class TbTypeController extends BaseController {
 	/**
 	*通过查询条件查询--分页
 	*/
+	@ResponseBody
 	@RequestMapping(value = "/query.html", method = {RequestMethod.POST,RequestMethod.GET})
-	public String  query(Model model,TbType t,@RequestParam(value="pageNo", required=true, defaultValue="1")  int pageNo,@RequestParam(value="pageSize", required=true, defaultValue="10") int pageSize,HttpServletRequest request,HttpServletResponse response){
+	public Map<String,Object>  query(Model model,TbType t,@RequestParam(value="pageNo", required=true, defaultValue="1")  int pageNo,@RequestParam(value="pageSize", required=true, defaultValue="10") int pageSize,HttpServletRequest request,HttpServletResponse response){
 		Map<String,Object> map=new HashMap<String,Object>();
 		try {
 				map= this.tbTypeService.query(t,pageNo,pageSize);
@@ -109,9 +112,10 @@ public class TbTypeController extends BaseController {
 			e.printStackTrace();
 			logger.info("通过查询条件查询--分页出错："+e.getMessage());
 		}
-		model.addAttribute("list", map.get("list"));
+	/*	model.addAttribute("list", map.get("list"));
 		model.addAttribute("page", map.get("page"));
-		return "TbType/list";
+		return "TbType/list";*/
+		return map;
 	}
 	
 	 
