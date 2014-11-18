@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="Public">
+	<sql id="PageCriteria">
+		<if test="pageNo != null">
+			<if test="pageSize != null">
+				limit #{pageNo}, #{pageSize}
+			</if>
+		</if>
+	</sql>
+	  
+	<sql id="OrderCriteria">
+		<if test="orderBy != null">
+			order by ${orderBy}
+		</if>
+	</sql>
+	
+	<sql id="CreateDateCriteria">
+		<if test="queryStartDate != null and queryEndDate != null">
+			and CREATE_DATE &gt;= #{queryStartDate} and CREATE_DATe &lt;= #{queryEndDate}
+		</if>
+	</sql>
+	
+	<sql id="beforePage">
+		<if test="rowStart != null">
+			<if test="rowEnd != null">
+				select * from ( select row_.*, rownum
+				rownum_ from (
+			</if>
+		</if>
+	</sql>
+	
+	<sql id="afterPage">
+		<if test="rowStart != null">
+			<if test="rowEnd != null">
+				<![CDATA[) row_ where rownum <= #{rowEnd}) where rownum_ >= #{rowStart} ]]>
+			</if>
+		</if>
+	</sql>
+</mapper> 

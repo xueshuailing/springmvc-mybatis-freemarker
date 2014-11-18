@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="TbType">
+	<resultMap type="TbType" id="TbTypeResultMap">
+            	<result column="ID" property="id" />
+            	<result column="TYPE" property="type" />
+            	<result column="NAME" property="name" />
+            	<result column="USER_ID" property="userId" />
+            	<result column="CREATE_DATE" property="createDate" />
+	</resultMap>
+
+	<sql id="TbTypeFindCriteria">
+		<where>
+            <if test="queryId != null and queryId != ''">
+				and ID = #{queryId}
+			</if>
+            <if test="queryType != null and queryType != ''">
+				and TYPE = #{queryType}
+			</if>
+            <if test="queryName != null and queryName != ''">
+				and NAME = #{queryName}
+			</if>
+            <if test="queryUserId != null and queryUserId != ''">
+				and USER_ID = #{queryUserId}
+			</if>
+            <if test="queryCreateDate != null and queryCreateDate != ''">
+				and CREATE_DATE = #{queryCreateDate}
+			</if>
+		</where>
+	</sql>
+
+	<sql id="TbTypeUpdateCriteria">
+		<set>
+            <if test="updateId != null and updateId != ''">
+				 ID =#{updateId},
+			</if>
+            <if test="updateType != null and updateType != ''">
+				 TYPE =#{updateType},
+			</if>
+            <if test="updateName != null and updateName != ''">
+				 NAME =#{updateName},
+			</if>
+            <if test="updateUserId != null and updateUserId != ''">
+				 USER_ID =#{updateUserId},
+			</if>
+            <if test="updateCreateDate != null and updateCreateDate != ''">
+				 CREATE_DATE =#{updateCreateDate},
+			</if>
+		</set>
+	</sql>
+</mapper> 

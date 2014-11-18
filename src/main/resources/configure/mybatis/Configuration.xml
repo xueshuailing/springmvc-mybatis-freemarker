@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE configuration PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-config.dtd">
+<configuration>
+	  <typeAliases>
+	  	 	  		<!-- 家庭成员表mybatis别名 -->
+    		<typeAlias alias="TbFamily" type="com.my.entity.TbFamily"/>
+	  		<!-- 家庭收入、支出表mybatis别名 -->
+    		<typeAlias alias="TbFinancial" type="com.my.entity.TbFinancial"/>
+	  		<!-- 收入、支出类型字典表mybatis别名 -->
+    		<typeAlias alias="TbType" type="com.my.entity.TbType"/>
+	  		<!-- 用户注册表（家庭成员管理员表）mybatis别名 -->
+    		<typeAlias alias="TbUser" type="com.my.entity.TbUser"/>
+	  </typeAliases>
+	<mappers>
+	  		<!-- 家庭成员表 配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/TbFamily.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/TbFamily.xml"/>
+	  		 
+	  		 
+	  		<!-- 家庭收入、支出表 配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/TbFinancial.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/TbFinancial.xml"/>
+	  		 
+	  		 
+	  		<!-- 收入、支出类型字典表 配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/TbType.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/TbType.xml"/>
+	  		 
+	  		 
+	  		<!-- 用户注册表（家庭成员管理员表） 配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/TbUser.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/TbUser.xml"/>
+	  		 
+	  		 
+	 	<!-- 公用 配置文件路径-->
+	  	<mapper resource="configure/mybatis/Public.xml" />
+	 </mappers>
+</configuration>

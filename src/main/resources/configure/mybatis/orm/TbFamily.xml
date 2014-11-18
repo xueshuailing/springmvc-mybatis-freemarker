@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="TbFamily">
+	<insert id="TbFamily_create" parameterType="TbFamily">
+		<selectKey resultType="long" keyProperty="id">
+		SELECT LAST_INSERT_ID()
+		</selectKey>
+		INSERT INTO tb_family
+		(
+            	ID,
+            	NAME,
+            	SEX,
+            	USER_ID,
+            	CREATE_DATE,
+            	AGE
+		)
+		VALUES
+		(
+            #{id,jdbcType=INTEGER},
+            #{name,jdbcType=VARCHAR},
+            #{sex,jdbcType=INTEGER},
+            #{userId,jdbcType=INTEGER},
+            #{createDate,jdbcType=DATE},
+            #{age,jdbcType=INTEGER}
+		)
+	</insert>
+	
+	<select id="TbFamily_read" parameterType="map" resultMap="TbFamilyResultMap">
+		select * from tb_family
+			<include refid="TbFamilyFindCriteria" />
+	</select>
+	
+	<select id="TbFamily_count" parameterType="map" resultType="long">
+		select count(0) from tb_family
+			<include refid="TbFamilyFindCriteria" />
+	</select>
+	
+	<select id="TbFamily_page" parameterType="map" resultMap="TbFamilyResultMap">
+		select * from tb_family
+		<include refid="TbFamilyFindCriteria" />
+		<include refid="Public.OrderCriteria" />
+		<include refid="Public.PageCriteria" />
+	</select>
+ 
+	<delete id="TbFamily_delete" parameterType="map">
+		delete from tb_family 
+		<include refid="TbFamilyFindCriteria" />
+	</delete>
+	
+	<update id="TbFamily_update" parameterType="map">
+		update tb_family 
+		<include refid="TbFamilyUpdateCriteria"/>
+		<include refid="TbFamilyFindCriteria"/>
+	</update>
+</mapper> 

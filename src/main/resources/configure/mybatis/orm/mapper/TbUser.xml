@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="TbUser">
+	<resultMap type="TbUser" id="TbUserResultMap">
+            	<result column="ID" property="id" />
+            	<result column="NAME" property="name" />
+            	<result column="AGE" property="age" />
+            	<result column="SEX" property="sex" />
+            	<result column="EMAIL" property="email" />
+            	<result column="PHONE" property="phone" />
+            	<result column="PASSWORD" property="password" />
+            	<result column="TIME" property="time" />
+            	<result column="STATE" property="state" />
+            	<result column="NUMBER" property="number" />
+            	<result column="END_TIME" property="endTime" />
+	</resultMap>
+
+	<sql id="TbUserFindCriteria">
+		<where>
+            <if test="queryId != null and queryId != ''">
+				and ID = #{queryId}
+			</if>
+            <if test="queryName != null and queryName != ''">
+				and NAME = #{queryName}
+			</if>
+            <if test="queryAge != null and queryAge != ''">
+				and AGE = #{queryAge}
+			</if>
+            <if test="querySex != null and querySex != ''">
+				and SEX = #{querySex}
+			</if>
+            <if test="queryEmail != null and queryEmail != ''">
+				and EMAIL = #{queryEmail}
+			</if>
+            <if test="queryPhone != null and queryPhone != ''">
+				and PHONE = #{queryPhone}
+			</if>
+            <if test="queryPassword != null and queryPassword != ''">
+				and PASSWORD = #{queryPassword}
+			</if>
+            <if test="queryTime != null and queryTime != ''">
+				and TIME = #{queryTime}
+			</if>
+            <if test="queryState != null and queryState != ''">
+				and STATE = #{queryState}
+			</if>
+            <if test="queryNumber != null and queryNumber != ''">
+				and NUMBER = #{queryNumber}
+			</if>
+            <if test="queryEndTime != null and queryEndTime != ''">
+				and END_TIME = #{queryEndTime}
+			</if>
+		</where>
+	</sql>
+
+	<sql id="TbUserUpdateCriteria">
+		<set>
+            <if test="updateId != null and updateId != ''">
+				 ID =#{updateId},
+			</if>
+            <if test="updateName != null and updateName != ''">
+				 NAME =#{updateName},
+			</if>
+            <if test="updateAge != null and updateAge != ''">
+				 AGE =#{updateAge},
+			</if>
+            <if test="updateSex != null and updateSex != ''">
+				 SEX =#{updateSex},
+			</if>
+            <if test="updateEmail != null and updateEmail != ''">
+				 EMAIL =#{updateEmail},
+			</if>
+            <if test="updatePhone != null and updatePhone != ''">
+				 PHONE =#{updatePhone},
+			</if>
+            <if test="updatePassword != null and updatePassword != ''">
+				 PASSWORD =#{updatePassword},
+			</if>
+            <if test="updateTime != null and updateTime != ''">
+				 TIME =#{updateTime},
+			</if>
+            <if test="updateState != null and updateState != ''">
+				 STATE =#{updateState},
+			</if>
+            <if test="updateNumber != null and updateNumber != ''">
+				 NUMBER =#{updateNumber},
+			</if>
+            <if test="updateEndTime != null and updateEndTime != ''">
+				 END_TIME =#{updateEndTime},
+			</if>
+		</set>
+	</sql>
+</mapper> 

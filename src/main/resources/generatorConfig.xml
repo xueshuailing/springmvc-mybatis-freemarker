@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE generatorConfiguration  
+PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
+"http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<!-- classPathEntry:数据库的JDBC驱动,换成你自己的驱动位置 -->
+	<classPathEntry
+		location="D:/repo/mysql/mysql-connector-java/5.1.6/mysql-connector-java-5.1.6.jar" />
+
+	<context id="MSSQLTables" targetRuntime="MyBatis3">
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
+		<!-- <plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin> -->
+		<plugin type="com.montnets.mybatis.generator.plugins.InsertAndUpdateBatch"></plugin>
+		<plugin type="org.mybatis.generator.plugins.MapperConfigPlugin">
+			<property name="fileName" value="mybatis-config.xml" />
+			<property name="targetPackage" value="/" />
+			<property name="targetProject" value="src/main/resources" />
+		</plugin>
+		<!-- Pagination
+		<plugin type="com.montnets.mybatis.generator.plugins.PaginationPlugin">
+			<property name="pageQualifiedName" value="com.montnets.edusun.common.Page" />
+			<property name="fromIndex" value="fromIndex" />
+			<property name="toIndex" value="toIndex" />
+			<property name="myBatisRepository"
+				value="com.montnets.edusun.common.MyBatisRepository" />
+		</plugin> -->
+		<!-- 此处是将Example改名为Criteria 当然 想改成什么都行 -->
+		<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+			<property name="searchString" value="Example" />
+			<property name="replaceString" value="Entity" />
+		</plugin>
+
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+
+		<!-- commentGenerator 去除自动生成的注释 -->
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+			 <property name="suppressDate" value="true" />
+		</commentGenerator>
+
+		<!-- jdbcConnection是指定的jdbc的连接信息； -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://127.0.0.1:3306/myfamily" userId="root"
+			password="123">
+		</jdbcConnection>
+
+		<!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer true， 把JDBC DECIMAL 
+			和 NUMERIC 类型解析为java.math.BigDecimal -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- javaModelGenerator是模型的生成信息，这里将指定这些Java model类的生成路径； -->
+		<javaModelGenerator targetPackage="com.weixin.entity"
+			targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<!-- sqlMapGenerator是mybatis 的sqlMapper XML文件的生成信息，包括生成路径等； -->
+		<sqlMapGenerator targetPackage="com.weixin.mapper"
+			targetProject="src/main/resources">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<!-- javaClientGenerator是应用接口的生成信息； -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.weixin.dao" targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+
+		<!-- table是用户指定的被生成相关信息的表，它必须在指定的jdbc连接中已经被建立。 -->
+		<table tableName="tb_user" domainObjectName="TUser">
+			<!-- 返回新增记录ID值 -->
+			<generatedKey column="ID" sqlStatement="MySql" identity="true" />
+		</table>
+
+	</context>
+</generatorConfiguration>  

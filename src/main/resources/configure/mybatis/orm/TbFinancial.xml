@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="TbFinancial">
+	<insert id="TbFinancial_create" parameterType="TbFinancial">
+		<selectKey resultType="long" keyProperty="id">
+		SELECT LAST_INSERT_ID()
+		</selectKey>
+		INSERT INTO tb_financial
+		(
+            	ID,
+            	TYPE_ID,
+            	NUM,
+            	CREATE_DATE,
+            	FAMILY_ID,
+            	USER_ID,
+            	FAMILY_SEX,
+            	FAMILY_AGE,
+            	FLAG,
+            	REMARK
+		)
+		VALUES
+		(
+            #{id,jdbcType=INTEGER},
+            #{typeId,jdbcType=INTEGER},
+            #{num,jdbcType=DOUBLE},
+            #{createDate,jdbcType=DATE},
+            #{familyId,jdbcType=INTEGER},
+            #{userId,jdbcType=INTEGER},
+            #{familySex,jdbcType=INTEGER},
+            #{familyAge,jdbcType=INTEGER},
+            #{flag,jdbcType=INTEGER},
+            #{remark,jdbcType=VARCHAR}
+		)
+	</insert>
+	
+	<select id="TbFinancial_read" parameterType="map" resultMap="TbFinancialResultMap">
+		select * from tb_financial
+			<include refid="TbFinancialFindCriteria" />
+	</select>
+	
+	<select id="TbFinancial_count" parameterType="map" resultType="long">
+		select count(0) from tb_financial
+			<include refid="TbFinancialFindCriteria" />
+	</select>
+	
+	<select id="TbFinancial_page" parameterType="map" resultMap="TbFinancialResultMap">
+		select * from tb_financial
+		<include refid="TbFinancialFindCriteria" />
+		<include refid="Public.OrderCriteria" />
+		<include refid="Public.PageCriteria" />
+	</select>
+ 
+	<delete id="TbFinancial_delete" parameterType="map">
+		delete from tb_financial 
+		<include refid="TbFinancialFindCriteria" />
+	</delete>
+	
+	<update id="TbFinancial_update" parameterType="map">
+		update tb_financial 
+		<include refid="TbFinancialUpdateCriteria"/>
+		<include refid="TbFinancialFindCriteria"/>
+	</update>
+</mapper> 

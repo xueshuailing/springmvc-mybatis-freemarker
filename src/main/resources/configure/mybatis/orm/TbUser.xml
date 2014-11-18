@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="TbUser">
+	<insert id="TbUser_create" parameterType="TbUser">
+		<selectKey resultType="long" keyProperty="id">
+		SELECT LAST_INSERT_ID()
+		</selectKey>
+		INSERT INTO tb_user
+		(
+            	ID,
+            	NAME,
+            	AGE,
+            	SEX,
+            	EMAIL,
+            	PHONE,
+            	PASSWORD,
+            	TIME,
+            	STATE,
+            	NUMBER,
+            	END_TIME
+		)
+		VALUES
+		(
+            #{id,jdbcType=INTEGER},
+            #{name,jdbcType=VARCHAR},
+            #{age,jdbcType=INTEGER},
+            #{sex,jdbcType=INTEGER},
+            #{email,jdbcType=VARCHAR},
+            #{phone,jdbcType=VARCHAR},
+            #{password,jdbcType=VARCHAR},
+            #{time,jdbcType=DATE},
+            #{state,jdbcType=INTEGER},
+            #{number,jdbcType=VARCHAR},
+            #{endTime,jdbcType=DATE}
+		)
+	</insert>
+	
+	<select id="TbUser_read" parameterType="map" resultMap="TbUserResultMap">
+		select * from tb_user
+			<include refid="TbUserFindCriteria" />
+	</select>
+	
+	<select id="TbUser_count" parameterType="map" resultType="long">
+		select count(0) from tb_user
+			<include refid="TbUserFindCriteria" />
+	</select>
+	
+	<select id="TbUser_page" parameterType="map" resultMap="TbUserResultMap">
+		select * from tb_user
+		<include refid="TbUserFindCriteria" />
+		<include refid="Public.OrderCriteria" />
+		<include refid="Public.PageCriteria" />
+	</select>
+ 
+	<delete id="TbUser_delete" parameterType="map">
+		delete from tb_user 
+		<include refid="TbUserFindCriteria" />
+	</delete>
+	
+	<update id="TbUser_update" parameterType="map">
+		update tb_user 
+		<include refid="TbUserUpdateCriteria"/>
+		<include refid="TbUserFindCriteria"/>
+	</update>
+</mapper> 

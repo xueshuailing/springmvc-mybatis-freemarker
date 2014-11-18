@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="TbFamily">
+	<resultMap type="TbFamily" id="TbFamilyResultMap">
+            	<result column="ID" property="id" />
+            	<result column="NAME" property="name" />
+            	<result column="SEX" property="sex" />
+            	<result column="USER_ID" property="userId" />
+            	<result column="CREATE_DATE" property="createDate" />
+            	<result column="AGE" property="age" />
+	</resultMap>
+
+	<sql id="TbFamilyFindCriteria">
+		<where>
+            <if test="queryId != null and queryId != ''">
+				and ID = #{queryId}
+			</if>
+            <if test="queryName != null and queryName != ''">
+				and NAME = #{queryName}
+			</if>
+            <if test="querySex != null and querySex != ''">
+				and SEX = #{querySex}
+			</if>
+            <if test="queryUserId != null and queryUserId != ''">
+				and USER_ID = #{queryUserId}
+			</if>
+            <if test="queryCreateDate != null and queryCreateDate != ''">
+				and CREATE_DATE = #{queryCreateDate}
+			</if>
+            <if test="queryAge != null and queryAge != ''">
+				and AGE = #{queryAge}
+			</if>
+		</where>
+	</sql>
+
+	<sql id="TbFamilyUpdateCriteria">
+		<set>
+            <if test="updateId != null and updateId != ''">
+				 ID =#{updateId},
+			</if>
+            <if test="updateName != null and updateName != ''">
+				 NAME =#{updateName},
+			</if>
+            <if test="updateSex != null and updateSex != ''">
+				 SEX =#{updateSex},
+			</if>
+            <if test="updateUserId != null and updateUserId != ''">
+				 USER_ID =#{updateUserId},
+			</if>
+            <if test="updateCreateDate != null and updateCreateDate != ''">
+				 CREATE_DATE =#{updateCreateDate},
+			</if>
+            <if test="updateAge != null and updateAge != ''">
+				 AGE =#{updateAge},
+			</if>
+		</set>
+	</sql>
+</mapper> 
