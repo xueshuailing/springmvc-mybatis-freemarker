@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>  
 <!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
 <mapper namespace="${tableInfo.tableClassName}">
-	<insert id="${tableInfo.tableClassName}_create" parameterType="${tableInfo.tableClassName}">
-		<selectKey resultType="long" keyProperty="id">
-		SELECT LAST_INSERT_ID()
-		</selectKey>
+	<insert id="${tableInfo.tableClassName}_create" useGeneratedKeys="true" keyProperty="id" parameterType="${tableInfo.tableClassName}">
+		 
 		INSERT INTO ${tableInfo.tableName}
 		(
 			 <#list tableInfo.tableColumns as columnInfo>
