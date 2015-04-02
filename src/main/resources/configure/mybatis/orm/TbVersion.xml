@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="TbVersion">
+	<insert id="TbVersion_create" useGeneratedKeys="true" keyProperty="id" parameterType="TbVersion">
+		 
+		INSERT INTO tb_version
+		(
+            	ID,
+            	VERSION_CODE,
+            	VERSION_NAME,
+            	VERSION_UPDATE,
+            	VERSION_SIZE,
+            	VERSION_URL,
+            	VERSION_TIME,
+            	VERSION_TYPE
+		)
+		VALUES
+		(
+            #{id,jdbcType=INTEGER},
+            #{versionCode,jdbcType=INTEGER},
+            #{versionName,jdbcType=VARCHAR},
+            #{versionUpdate,jdbcType=VARCHAR},
+            #{versionSize,jdbcType=VARCHAR},
+            #{versionUrl,jdbcType=VARCHAR},
+            #{versionTime,jdbcType=DATE},
+            #{versionType,jdbcType=INTEGER}
+		)
+	</insert>
+	
+	<select id="TbVersion_read" parameterType="map" resultMap="TbVersionResultMap">
+		select * from tb_version
+			<include refid="TbVersionFindCriteria" />
+	</select>
+	
+	<select id="TbVersion_count" parameterType="map" resultType="long">
+		select count(0) from tb_version
+			<include refid="TbVersionFindCriteria" />
+	</select>
+	
+	<select id="TbVersion_page" parameterType="map" resultMap="TbVersionResultMap">
+		select * from tb_version
+		<include refid="TbVersionFindCriteria" />
+		<include refid="Public.OrderCriteria" />
+		<include refid="Public.PageCriteria" />
+	</select>
+ 
+	<delete id="TbVersion_delete" parameterType="map">
+		delete from tb_version 
+		<include refid="TbVersionFindCriteria" />
+	</delete>
+	
+	<update id="TbVersion_update" parameterType="map">
+		update tb_version 
+		<include refid="TbVersionUpdateCriteria"/>
+		<include refid="TbVersionFindCriteria"/>
+	</update>
+</mapper> 

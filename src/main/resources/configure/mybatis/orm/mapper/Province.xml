@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="Province">
+	<resultMap type="Province" id="ProvinceResultMap">
+            	<result column="PRO_ID" property="proId" />
+            	<result column="PRO_NAME" property="proName" />
+            	<result column="PRO_SORT" property="proSort" />
+            	<result column="PRO_REMARK" property="proRemark" />
+	</resultMap>
+
+	<sql id="ProvinceFindCriteria">
+		<where>
+            <if test="queryProId != null and queryProId != ''">
+				and PRO_ID = #{queryProId}
+			</if>
+            <if test="queryProName != null and queryProName != ''">
+				and PRO_NAME = #{queryProName}
+			</if>
+            <if test="queryProSort != null and queryProSort != ''">
+				and PRO_SORT = #{queryProSort}
+			</if>
+            <if test="queryProRemark != null and queryProRemark != ''">
+				and PRO_REMARK = #{queryProRemark}
+			</if>
+		</where>
+	</sql>
+
+	<sql id="ProvinceUpdateCriteria">
+		<set>
+            <if test="updateProId != null and updateProId != ''">
+				 PRO_ID =#{updateProId},
+			</if>
+            <if test="updateProName != null and updateProName != ''">
+				 PRO_NAME =#{updateProName},
+			</if>
+            <if test="updateProSort != null and updateProSort != ''">
+				 PRO_SORT =#{updateProSort},
+			</if>
+            <if test="updateProRemark != null and updateProRemark != ''">
+				 PRO_REMARK =#{updateProRemark},
+			</if>
+		</set>
+	</sql>
+</mapper> 

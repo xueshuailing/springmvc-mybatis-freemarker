@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="OrderComment">
+	<resultMap type="OrderComment" id="OrderCommentResultMap">
+            	<result column="ID" property="id" />
+            	<result column="USER_ID" property="userId" />
+            	<result column="COMMENT_TIME" property="commentTime" />
+            	<result column="COMMENT_COTENT" property="commentCotent" />
+            	<result column="IS_SHOW" property="isShow" />
+            	<result column="INDENT_ID" property="indentId" />
+            	<result column="NAME" property="name" />
+	</resultMap>
+
+	<sql id="OrderCommentFindCriteria">
+		<where>
+            <if test="queryId != null and queryId != ''">
+				and ID = #{queryId}
+			</if>
+            <if test="queryUserId != null and queryUserId != ''">
+				and USER_ID = #{queryUserId}
+			</if>
+            <if test="queryCommentTime != null and queryCommentTime != ''">
+				and COMMENT_TIME = #{queryCommentTime}
+			</if>
+            <if test="queryCommentCotent != null and queryCommentCotent != ''">
+				and COMMENT_COTENT = #{queryCommentCotent}
+			</if>
+            <if test="queryIsShow != null and queryIsShow != ''">
+				and IS_SHOW = #{queryIsShow}
+			</if>
+            <if test="queryIndentId != null and queryIndentId != ''">
+				and INDENT_ID = #{queryIndentId}
+			</if>
+            <if test="queryName != null and queryName != ''">
+				and NAME = #{queryName}
+			</if>
+		</where>
+	</sql>
+
+	<sql id="OrderCommentUpdateCriteria">
+		<set>
+            <if test="updateId != null and updateId != ''">
+				 ID =#{updateId},
+			</if>
+            <if test="updateUserId != null and updateUserId != ''">
+				 USER_ID =#{updateUserId},
+			</if>
+            <if test="updateCommentTime != null and updateCommentTime != ''">
+				 COMMENT_TIME =#{updateCommentTime},
+			</if>
+            <if test="updateCommentCotent != null and updateCommentCotent != ''">
+				 COMMENT_COTENT =#{updateCommentCotent},
+			</if>
+            <if test="updateIsShow != null and updateIsShow != ''">
+				 IS_SHOW =#{updateIsShow},
+			</if>
+            <if test="updateIndentId != null and updateIndentId != ''">
+				 INDENT_ID =#{updateIndentId},
+			</if>
+            <if test="updateName != null and updateName != ''">
+				 NAME =#{updateName},
+			</if>
+		</set>
+	</sql>
+</mapper> 

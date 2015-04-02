@@ -9,7 +9,7 @@ import org.gitchina.framework.commons.dao.support.SqlParameter;
 import org.springframework.stereotype.Repository;
 import com.my.entity.TbUser;
 /**
- * 用户注册表（家庭成员管理员表）dao层
+ * dao层
  */
 @Repository
 public class TbUserDao {

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="TbClassifyGoods">
+	<insert id="TbClassifyGoods_create" useGeneratedKeys="true" keyProperty="id" parameterType="TbClassifyGoods">
+		 
+		INSERT INTO tb_classify_goods
+		(
+            	id,
+            	classify_id,
+            	goods_id,
+            	goods_num
+		)
+		VALUES
+		(
+            #{id,jdbcType=INTEGER},
+            #{classifyId,jdbcType=INTEGER},
+            #{goodsId,jdbcType=INTEGER},
+            #{goodsNum,jdbcType=VARCHAR}
+		)
+	</insert>
+	
+	<select id="TbClassifyGoods_read" parameterType="map" resultMap="TbClassifyGoodsResultMap">
+		select * from tb_classify_goods
+			<include refid="TbClassifyGoodsFindCriteria" />
+	</select>
+	
+	<select id="TbClassifyGoods_count" parameterType="map" resultType="long">
+		select count(0) from tb_classify_goods
+			<include refid="TbClassifyGoodsFindCriteria" />
+	</select>
+	
+	<select id="TbClassifyGoods_page" parameterType="map" resultMap="TbClassifyGoodsResultMap">
+		select * from tb_classify_goods
+		<include refid="TbClassifyGoodsFindCriteria" />
+		<include refid="Public.OrderCriteria" />
+		<include refid="Public.PageCriteria" />
+	</select>
+ 
+	<delete id="TbClassifyGoods_delete" parameterType="map">
+		delete from tb_classify_goods 
+		<include refid="TbClassifyGoodsFindCriteria" />
+	</delete>
+	
+	<update id="TbClassifyGoods_update" parameterType="map">
+		update tb_classify_goods 
+		<include refid="TbClassifyGoodsUpdateCriteria"/>
+		<include refid="TbClassifyGoodsFindCriteria"/>
+	</update>
+</mapper> 

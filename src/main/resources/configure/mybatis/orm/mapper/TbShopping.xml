@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="TbShopping">
+	<resultMap type="TbShopping" id="TbShoppingResultMap">
+            	<result column="ID" property="id" />
+            	<result column="GOODS_ID" property="goodsId" />
+            	<result column="GOODS_NAME" property="goodsName" />
+            	<result column="GOODS_NUM" property="goodsNum" />
+            	<result column="GOODS_URL" property="goodsUrl" />
+            	<result column="GOODS_COUNT" property="goodsCount" />
+            	<result column="GOODS_PRICE" property="goodsPrice" />
+            	<result column="SHOPPING_COUNT" property="shoppingCount" />
+            	<result column="USER_ID" property="userId" />
+	</resultMap>
+
+	<sql id="TbShoppingFindCriteria">
+		<where>
+            <if test="queryId != null and queryId != ''">
+				and ID = #{queryId}
+			</if>
+            <if test="queryGoodsId != null and queryGoodsId != ''">
+				and GOODS_ID = #{queryGoodsId}
+			</if>
+            <if test="queryGoodsName != null and queryGoodsName != ''">
+				and GOODS_NAME = #{queryGoodsName}
+			</if>
+            <if test="queryGoodsNum != null and queryGoodsNum != ''">
+				and GOODS_NUM = #{queryGoodsNum}
+			</if>
+            <if test="queryGoodsUrl != null and queryGoodsUrl != ''">
+				and GOODS_URL = #{queryGoodsUrl}
+			</if>
+            <if test="queryGoodsCount != null and queryGoodsCount != ''">
+				and GOODS_COUNT = #{queryGoodsCount}
+			</if>
+            <if test="queryGoodsPrice != null and queryGoodsPrice != ''">
+				and GOODS_PRICE = #{queryGoodsPrice}
+			</if>
+            <if test="queryShoppingCount != null and queryShoppingCount != ''">
+				and SHOPPING_COUNT = #{queryShoppingCount}
+			</if>
+            <if test="queryUserId != null and queryUserId != ''">
+				and USER_ID = #{queryUserId}
+			</if>
+		</where>
+	</sql>
+
+	<sql id="TbShoppingUpdateCriteria">
+		<set>
+            <if test="updateId != null and updateId != ''">
+				 ID =#{updateId},
+			</if>
+            <if test="updateGoodsId != null and updateGoodsId != ''">
+				 GOODS_ID =#{updateGoodsId},
+			</if>
+            <if test="updateGoodsName != null and updateGoodsName != ''">
+				 GOODS_NAME =#{updateGoodsName},
+			</if>
+            <if test="updateGoodsNum != null and updateGoodsNum != ''">
+				 GOODS_NUM =#{updateGoodsNum},
+			</if>
+            <if test="updateGoodsUrl != null and updateGoodsUrl != ''">
+				 GOODS_URL =#{updateGoodsUrl},
+			</if>
+            <if test="updateGoodsCount != null and updateGoodsCount != ''">
+				 GOODS_COUNT =#{updateGoodsCount},
+			</if>
+            <if test="updateGoodsPrice != null and updateGoodsPrice != ''">
+				 GOODS_PRICE =#{updateGoodsPrice},
+			</if>
+            <if test="updateShoppingCount != null and updateShoppingCount != ''">
+				 SHOPPING_COUNT =#{updateShoppingCount},
+			</if>
+            <if test="updateUserId != null and updateUserId != ''">
+				 USER_ID =#{updateUserId},
+			</if>
+		</set>
+	</sql>
+</mapper> 

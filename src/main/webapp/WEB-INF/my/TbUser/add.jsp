@@ -16,83 +16,123 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       		<form class="form-horizontal"    method="post" id="save" action="<%=basePath%>my/tbuser/save.html">
 			<h2 style="margin-left:250px;" ></h2>
 			<div class="form-group" >
-				<label for="namediv" class="col-sm-2 control-label" >
-					<strong>姓名：</strong>
+				<label for="userNamediv" class="col-sm-2 control-label" >
+					<strong>：</strong>
 				</label>
-				<div class="input-group col-sm-6" id="namediv">
-					<input type="text" class="form-control" id="name" name="name" placeholder="姓名"     required   onkeydown="if(event.keyCode==32) return false"    >
+				<div class="input-group col-sm-6" id="userNamediv">
+					<input type="text" class="form-control" id="userName" name="userName" placeholder=""     required   onkeydown="if(event.keyCode==32) return false"    >
 				</div> 
 			</div>
 			<div class="form-group" >
-				<label for="agediv" class="col-sm-2 control-label" >
-					<strong>年龄：</strong>
+				<label for="userPassworddiv" class="col-sm-2 control-label" >
+					<strong>：</strong>
 				</label>
-				<div class="input-group col-sm-6" id="agediv">
-					<input type="text" class="form-control" id="age" name="age" placeholder="年龄"     required   onkeydown="if(event.keyCode==32) return false"    >
+				<div class="input-group col-sm-6" id="userPassworddiv">
+					<input type="text" class="form-control" id="userPassword" name="userPassword" placeholder=""     required   onkeydown="if(event.keyCode==32) return false"    >
 				</div> 
 			</div>
 			<div class="form-group" >
-				<label for="sexdiv" class="col-sm-2 control-label" >
-					<strong>性别 0--男 1--女：</strong>
+				<label for="positiondiv" class="col-sm-2 control-label" >
+					<strong>：</strong>
 				</label>
-				<div class="input-group col-sm-6" id="sexdiv">
-					<input type="text" class="form-control" id="sex" name="sex" placeholder="性别 0--男 1--女"     required   onkeydown="if(event.keyCode==32) return false"    >
+				<div class="input-group col-sm-6" id="positiondiv">
+					<input type="text" class="form-control" id="position" name="position" placeholder=""     required   onkeydown="if(event.keyCode==32) return false"    >
+				</div> 
+			</div>
+			<div class="form-group" >
+				<label for="phoneNumberdiv" class="col-sm-2 control-label" >
+					<strong>：</strong>
+				</label>
+				<div class="input-group col-sm-6" id="phoneNumberdiv">
+					<input type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder=""     required   onkeydown="if(event.keyCode==32) return false"    >
 				</div> 
 			</div>
 			<div class="form-group" >
 				<label for="emaildiv" class="col-sm-2 control-label" >
-					<strong>邮箱：</strong>
+					<strong>：</strong>
 				</label>
 				<div class="input-group col-sm-6" id="emaildiv">
-					<input type="text" class="form-control" id="email" name="email" placeholder="邮箱"     required   onkeydown="if(event.keyCode==32) return false"    >
+					<input type="text" class="form-control" id="email" name="email" placeholder=""     required   onkeydown="if(event.keyCode==32) return false"    >
 				</div> 
 			</div>
 			<div class="form-group" >
-				<label for="phonediv" class="col-sm-2 control-label" >
-					<strong>手机号：</strong>
+				<label for="sexdiv" class="col-sm-2 control-label" >
+					<strong>：</strong>
 				</label>
-				<div class="input-group col-sm-6" id="phonediv">
-					<input type="text" class="form-control" id="phone" name="phone" placeholder="手机号"     required   onkeydown="if(event.keyCode==32) return false"    >
+				<div class="input-group col-sm-6" id="sexdiv">
+					<input type="text" class="form-control" id="sex" name="sex" placeholder=""     required   onkeydown="if(event.keyCode==32) return false"    >
 				</div> 
 			</div>
 			<div class="form-group" >
-				<label for="passworddiv" class="col-sm-2 control-label" >
-					<strong>密码：</strong>
+				<label for="namediv" class="col-sm-2 control-label" >
+					<strong>：</strong>
 				</label>
-				<div class="input-group col-sm-6" id="passworddiv">
-					<input type="text" class="form-control" id="password" name="password" placeholder="密码"     required   onkeydown="if(event.keyCode==32) return false"    >
+				<div class="input-group col-sm-6" id="namediv">
+					<input type="text" class="form-control" id="name" name="name" placeholder=""     required   onkeydown="if(event.keyCode==32) return false"    >
 				</div> 
 			</div>
 			<div class="form-group" >
-				<label for="timediv" class="col-sm-2 control-label" >
-					<strong>创建时间：</strong>
+				<label for="agediv" class="col-sm-2 control-label" >
+					<strong>：</strong>
 				</label>
-				<div class="input-group col-sm-6" id="timediv">
-					<input type="text" class="form-control" id="time" name="time" placeholder="创建时间"     required   onkeydown="if(event.keyCode==32) return false"    >
+				<div class="input-group col-sm-6" id="agediv">
+					<input type="text" class="form-control" id="age" name="age" placeholder=""     required   onkeydown="if(event.keyCode==32) return false"    >
 				</div> 
 			</div>
 			<div class="form-group" >
-				<label for="statediv" class="col-sm-2 control-label" >
-					<strong>是否激活 0--未激活 1--激活：</strong>
+				<label for="addressdiv" class="col-sm-2 control-label" >
+					<strong>：</strong>
 				</label>
-				<div class="input-group col-sm-6" id="statediv">
-					<input type="text" class="form-control" id="state" name="state" placeholder="是否激活 0--未激活 1--激活"     required   onkeydown="if(event.keyCode==32) return false"    >
+				<div class="input-group col-sm-6" id="addressdiv">
+					<input type="text" class="form-control" id="address" name="address" placeholder=""     required   onkeydown="if(event.keyCode==32) return false"    >
 				</div> 
 			</div>
 			<div class="form-group" >
-				<label for="numberdiv" class="col-sm-2 control-label" >
-					<strong>激活码：</strong>
+				<label for="userBigLogodiv" class="col-sm-2 control-label" >
+					<strong>：</strong>
 				</label>
-				<div class="input-group col-sm-6" id="numberdiv">
-					<input type="text" class="form-control" id="number" name="number" placeholder="激活码"     required   onkeydown="if(event.keyCode==32) return false"    >
+				<div class="input-group col-sm-6" id="userBigLogodiv">
+					<input type="text" class="form-control" id="userBigLogo" name="userBigLogo" placeholder=""     required   onkeydown="if(event.keyCode==32) return false"    >
 				</div> 
 			</div>
 			<div class="form-group" >
-				<label for="endTimediv" class="col-sm-2 control-label" >
-					<strong>到期时间：</strong>
+				<label for="userSmallLogodiv" class="col-sm-2 control-label" >
+					<strong>：</strong>
 				</label>
-				<div class="input-group col-sm-6" id="endTimediv">
-					<input type="text" class="form-control" id="endTime" name="endTime" placeholder="到期时间"     required   onkeydown="if(event.keyCode==32) return false"    >
+				<div class="input-group col-sm-6" id="userSmallLogodiv">
+					<input type="text" class="form-control" id="userSmallLogo" name="userSmallLogo" placeholder=""     required   onkeydown="if(event.keyCode==32) return false"    >
+				</div> 
+			</div>
+			<div class="form-group" >
+				<label for="jpushIddiv" class="col-sm-2 control-label" >
+					<strong>：</strong>
+				</label>
+				<div class="input-group col-sm-6" id="jpushIddiv">
+					<input type="text" class="form-control" id="jpushId" name="jpushId" placeholder=""     required   onkeydown="if(event.keyCode==32) return false"    >
+				</div> 
+			</div>
+			<div class="form-group" >
+				<label for="balancediv" class="col-sm-2 control-label" >
+					<strong>：</strong>
+				</label>
+				<div class="input-group col-sm-6" id="balancediv">
+					<input type="text" class="form-control" id="balance" name="balance" placeholder=""     required   onkeydown="if(event.keyCode==32) return false"    >
+				</div> 
+			</div>
+			<div class="form-group" >
+				<label for="createTimediv" class="col-sm-2 control-label" >
+					<strong>：</strong>
+				</label>
+				<div class="input-group col-sm-6" id="createTimediv">
+					<input type="text" class="form-control" id="createTime" name="createTime" placeholder=""     required   onkeydown="if(event.keyCode==32) return false"    >
+				</div> 
+			</div>
+			<div class="form-group" >
+				<label for="typediv" class="col-sm-2 control-label" >
+					<strong>：</strong>
+				</label>
+				<div class="input-group col-sm-6" id="typediv">
+					<input type="text" class="form-control" id="type" name="type" placeholder=""     required   onkeydown="if(event.keyCode==32) return false"    >
 				</div> 
 			</div>
 			</form>

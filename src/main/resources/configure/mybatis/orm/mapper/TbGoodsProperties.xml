@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="TbGoodsProperties">
+	<resultMap type="TbGoodsProperties" id="TbGoodsPropertiesResultMap">
+            	<result column="id" property="id" />
+            	<result column="name" property="name" />
+            	<result column="is_many" property="isMany" />
+            	<result column="parent_id" property="parentId" />
+            	<result column="is_public" property="isPublic" />
+	</resultMap>
+
+	<sql id="TbGoodsPropertiesFindCriteria">
+		<where>
+            <if test="queryId != null and queryId != ''">
+				and id = #{queryId}
+			</if>
+            <if test="queryName != null and queryName != ''">
+				and name = #{queryName}
+			</if>
+            <if test="queryIsMany != null and queryIsMany != ''">
+				and is_many = #{queryIsMany}
+			</if>
+            <if test="queryParentId != null and queryParentId != ''">
+				and parent_id = #{queryParentId}
+			</if>
+            <if test="queryIsPublic != null and queryIsPublic != ''">
+				and is_public = #{queryIsPublic}
+			</if>
+		</where>
+	</sql>
+
+	<sql id="TbGoodsPropertiesUpdateCriteria">
+		<set>
+            <if test="updateId != null and updateId != ''">
+				 id =#{updateId},
+			</if>
+            <if test="updateName != null and updateName != ''">
+				 name =#{updateName},
+			</if>
+            <if test="updateIsMany != null and updateIsMany != ''">
+				 is_many =#{updateIsMany},
+			</if>
+            <if test="updateParentId != null and updateParentId != ''">
+				 parent_id =#{updateParentId},
+			</if>
+            <if test="updateIsPublic != null and updateIsPublic != ''">
+				 is_public =#{updateIsPublic},
+			</if>
+		</set>
+	</sql>
+</mapper> 

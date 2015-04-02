@@ -2,34 +2,167 @@
 <!DOCTYPE configuration PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-config.dtd">
 <configuration>
 	  <typeAliases>
-	  	 	  		<!-- 家庭成员表mybatis别名 -->
-    		<typeAlias alias="TbFamily" type="com.my.entity.TbFamily"/>
-	  		<!-- 家庭收入、支出表mybatis别名 -->
-    		<typeAlias alias="TbFinancial" type="com.my.entity.TbFinancial"/>
-	  		<!-- 收入、支出类型字典表mybatis别名 -->
-    		<typeAlias alias="TbType" type="com.my.entity.TbType"/>
-	  		<!-- 用户注册表（家庭成员管理员表）mybatis别名 -->
+	  	 	  		<!-- mybatis别名 -->
+    		<typeAlias alias="City" type="com.my.entity.City"/>
+	  		<!-- mybatis别名 -->
+    		<typeAlias alias="Count" type="com.my.entity.Count"/>
+	  		<!-- mybatis别名 -->
+    		<typeAlias alias="OrderComment" type="com.my.entity.OrderComment"/>
+	  		<!-- mybatis别名 -->
+    		<typeAlias alias="Province" type="com.my.entity.Province"/>
+	  		<!-- mybatis别名 -->
+    		<typeAlias alias="TbAccount" type="com.my.entity.TbAccount"/>
+	  		<!-- mybatis别名 -->
+    		<typeAlias alias="TbClassify" type="com.my.entity.TbClassify"/>
+	  		<!-- mybatis别名 -->
+    		<typeAlias alias="TbClassifyGoods" type="com.my.entity.TbClassifyGoods"/>
+	  		<!-- mybatis别名 -->
+    		<typeAlias alias="TbEstate" type="com.my.entity.TbEstate"/>
+	  		<!-- mybatis别名 -->
+    		<typeAlias alias="TbEstateInfo" type="com.my.entity.TbEstateInfo"/>
+	  		<!-- mybatis别名 -->
+    		<typeAlias alias="TbFoodsafety" type="com.my.entity.TbFoodsafety"/>
+	  		<!-- mybatis别名 -->
+    		<typeAlias alias="TbGoods" type="com.my.entity.TbGoods"/>
+	  		<!-- mybatis别名 -->
+    		<typeAlias alias="TbGoodsMarket" type="com.my.entity.TbGoodsMarket"/>
+	  		<!-- mybatis别名 -->
+    		<typeAlias alias="TbGoodsPic" type="com.my.entity.TbGoodsPic"/>
+	  		<!-- mybatis别名 -->
+    		<typeAlias alias="TbGoodsProperties" type="com.my.entity.TbGoodsProperties"/>
+	  		<!-- mybatis别名 -->
+    		<typeAlias alias="TbGoodsPropertiesClassify" type="com.my.entity.TbGoodsPropertiesClassify"/>
+	  		<!-- mybatis别名 -->
+    		<typeAlias alias="TbGoodsPropertiesGp" type="com.my.entity.TbGoodsPropertiesGp"/>
+	  		<!-- mybatis别名 -->
+    		<typeAlias alias="TbMarketClassify" type="com.my.entity.TbMarketClassify"/>
+	  		<!-- mybatis别名 -->
+    		<typeAlias alias="TbOrder" type="com.my.entity.TbOrder"/>
+	  		<!-- mybatis别名 -->
+    		<typeAlias alias="TbOrderGoods" type="com.my.entity.TbOrderGoods"/>
+	  		<!-- 用户收货地址表mybatis别名 -->
+    		<typeAlias alias="TbReceipt" type="com.my.entity.TbReceipt"/>
+	  		<!-- mybatis别名 -->
+    		<typeAlias alias="TbShopping" type="com.my.entity.TbShopping"/>
+	  		<!-- mybatis别名 -->
     		<typeAlias alias="TbUser" type="com.my.entity.TbUser"/>
+	  		<!-- 版本控制表mybatis别名 -->
+    		<typeAlias alias="TbVersion" type="com.my.entity.TbVersion"/>
 	  </typeAliases>
 	<mappers>
-	  		<!-- 家庭成员表 配置文件路径-->
-    		 <mapper resource="configure/mybatis/orm/mapper/TbFamily.xml"/>
-	  		 <mapper resource="configure/mybatis/orm/TbFamily.xml"/>
+	  		<!--  配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/City.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/City.xml"/>
 	  		 
 	  		 
-	  		<!-- 家庭收入、支出表 配置文件路径-->
-    		 <mapper resource="configure/mybatis/orm/mapper/TbFinancial.xml"/>
-	  		 <mapper resource="configure/mybatis/orm/TbFinancial.xml"/>
+	  		<!--  配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/Count.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/Count.xml"/>
 	  		 
 	  		 
-	  		<!-- 收入、支出类型字典表 配置文件路径-->
-    		 <mapper resource="configure/mybatis/orm/mapper/TbType.xml"/>
-	  		 <mapper resource="configure/mybatis/orm/TbType.xml"/>
+	  		<!--  配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/OrderComment.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/OrderComment.xml"/>
 	  		 
 	  		 
-	  		<!-- 用户注册表（家庭成员管理员表） 配置文件路径-->
+	  		<!--  配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/Province.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/Province.xml"/>
+	  		 
+	  		 
+	  		<!--  配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/TbAccount.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/TbAccount.xml"/>
+	  		 
+	  		 
+	  		<!--  配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/TbClassify.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/TbClassify.xml"/>
+	  		 
+	  		 
+	  		<!--  配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/TbClassifyGoods.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/TbClassifyGoods.xml"/>
+	  		 
+	  		 
+	  		<!--  配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/TbEstate.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/TbEstate.xml"/>
+	  		 
+	  		 
+	  		<!--  配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/TbEstateInfo.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/TbEstateInfo.xml"/>
+	  		 
+	  		 
+	  		<!--  配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/TbFoodsafety.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/TbFoodsafety.xml"/>
+	  		 
+	  		 
+	  		<!--  配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/TbGoods.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/TbGoods.xml"/>
+	  		 
+	  		 
+	  		<!--  配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/TbGoodsMarket.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/TbGoodsMarket.xml"/>
+	  		 
+	  		 
+	  		<!--  配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/TbGoodsPic.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/TbGoodsPic.xml"/>
+	  		 
+	  		 
+	  		<!--  配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/TbGoodsProperties.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/TbGoodsProperties.xml"/>
+	  		 
+	  		 
+	  		<!--  配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/TbGoodsPropertiesClassify.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/TbGoodsPropertiesClassify.xml"/>
+	  		 
+	  		 
+	  		<!--  配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/TbGoodsPropertiesGp.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/TbGoodsPropertiesGp.xml"/>
+	  		 
+	  		 
+	  		<!--  配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/TbMarketClassify.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/TbMarketClassify.xml"/>
+	  		 
+	  		 
+	  		<!--  配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/TbOrder.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/TbOrder.xml"/>
+	  		 
+	  		 
+	  		<!--  配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/TbOrderGoods.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/TbOrderGoods.xml"/>
+	  		 
+	  		 
+	  		<!-- 用户收货地址表 配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/TbReceipt.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/TbReceipt.xml"/>
+	  		 
+	  		 
+	  		<!--  配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/TbShopping.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/TbShopping.xml"/>
+	  		 
+	  		 
+	  		<!--  配置文件路径-->
     		 <mapper resource="configure/mybatis/orm/mapper/TbUser.xml"/>
 	  		 <mapper resource="configure/mybatis/orm/TbUser.xml"/>
+	  		 
+	  		 
+	  		<!-- 版本控制表 配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/TbVersion.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/TbVersion.xml"/>
 	  		 
 	  		 
 	 	<!-- 公用 配置文件路径-->

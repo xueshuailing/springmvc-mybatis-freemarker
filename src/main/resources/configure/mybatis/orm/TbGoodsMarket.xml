@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="TbGoodsMarket">
+	<insert id="TbGoodsMarket_create" useGeneratedKeys="true" keyProperty="id" parameterType="TbGoodsMarket">
+		 
+		INSERT INTO tb_goods_market
+		(
+            	id,
+            	goods_id,
+            	goods_num,
+            	market_id
+		)
+		VALUES
+		(
+            #{id,jdbcType=INTEGER},
+            #{goodsId,jdbcType=INTEGER},
+            #{goodsNum,jdbcType=VARCHAR},
+            #{marketId,jdbcType=INTEGER}
+		)
+	</insert>
+	
+	<select id="TbGoodsMarket_read" parameterType="map" resultMap="TbGoodsMarketResultMap">
+		select * from tb_goods_market
+			<include refid="TbGoodsMarketFindCriteria" />
+	</select>
+	
+	<select id="TbGoodsMarket_count" parameterType="map" resultType="long">
+		select count(0) from tb_goods_market
+			<include refid="TbGoodsMarketFindCriteria" />
+	</select>
+	
+	<select id="TbGoodsMarket_page" parameterType="map" resultMap="TbGoodsMarketResultMap">
+		select * from tb_goods_market
+		<include refid="TbGoodsMarketFindCriteria" />
+		<include refid="Public.OrderCriteria" />
+		<include refid="Public.PageCriteria" />
+	</select>
+ 
+	<delete id="TbGoodsMarket_delete" parameterType="map">
+		delete from tb_goods_market 
+		<include refid="TbGoodsMarketFindCriteria" />
+	</delete>
+	
+	<update id="TbGoodsMarket_update" parameterType="map">
+		update tb_goods_market 
+		<include refid="TbGoodsMarketUpdateCriteria"/>
+		<include refid="TbGoodsMarketFindCriteria"/>
+	</update>
+</mapper> 

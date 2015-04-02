@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="TbVersion">
+	<resultMap type="TbVersion" id="TbVersionResultMap">
+            	<result column="ID" property="id" />
+            	<result column="VERSION_CODE" property="versionCode" />
+            	<result column="VERSION_NAME" property="versionName" />
+            	<result column="VERSION_UPDATE" property="versionUpdate" />
+            	<result column="VERSION_SIZE" property="versionSize" />
+            	<result column="VERSION_URL" property="versionUrl" />
+            	<result column="VERSION_TIME" property="versionTime" />
+            	<result column="VERSION_TYPE" property="versionType" />
+	</resultMap>
+
+	<sql id="TbVersionFindCriteria">
+		<where>
+            <if test="queryId != null and queryId != ''">
+				and ID = #{queryId}
+			</if>
+            <if test="queryVersionCode != null and queryVersionCode != ''">
+				and VERSION_CODE = #{queryVersionCode}
+			</if>
+            <if test="queryVersionName != null and queryVersionName != ''">
+				and VERSION_NAME = #{queryVersionName}
+			</if>
+            <if test="queryVersionUpdate != null and queryVersionUpdate != ''">
+				and VERSION_UPDATE = #{queryVersionUpdate}
+			</if>
+            <if test="queryVersionSize != null and queryVersionSize != ''">
+				and VERSION_SIZE = #{queryVersionSize}
+			</if>
+            <if test="queryVersionUrl != null and queryVersionUrl != ''">
+				and VERSION_URL = #{queryVersionUrl}
+			</if>
+            <if test="queryVersionTime != null and queryVersionTime != ''">
+				and VERSION_TIME = #{queryVersionTime}
+			</if>
+            <if test="queryVersionType != null and queryVersionType != ''">
+				and VERSION_TYPE = #{queryVersionType}
+			</if>
+		</where>
+	</sql>
+
+	<sql id="TbVersionUpdateCriteria">
+		<set>
+            <if test="updateId != null and updateId != ''">
+				 ID =#{updateId},
+			</if>
+            <if test="updateVersionCode != null and updateVersionCode != ''">
+				 VERSION_CODE =#{updateVersionCode},
+			</if>
+            <if test="updateVersionName != null and updateVersionName != ''">
+				 VERSION_NAME =#{updateVersionName},
+			</if>
+            <if test="updateVersionUpdate != null and updateVersionUpdate != ''">
+				 VERSION_UPDATE =#{updateVersionUpdate},
+			</if>
+            <if test="updateVersionSize != null and updateVersionSize != ''">
+				 VERSION_SIZE =#{updateVersionSize},
+			</if>
+            <if test="updateVersionUrl != null and updateVersionUrl != ''">
+				 VERSION_URL =#{updateVersionUrl},
+			</if>
+            <if test="updateVersionTime != null and updateVersionTime != ''">
+				 VERSION_TIME =#{updateVersionTime},
+			</if>
+            <if test="updateVersionType != null and updateVersionType != ''">
+				 VERSION_TYPE =#{updateVersionType},
+			</if>
+		</set>
+	</sql>
+</mapper> 

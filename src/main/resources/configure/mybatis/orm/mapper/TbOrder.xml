@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="TbOrder">
+	<resultMap type="TbOrder" id="TbOrderResultMap">
+            	<result column="id" property="id" />
+            	<result column="IN_NUM" property="inNum" />
+            	<result column="USER_ID" property="userId" />
+            	<result column="IN_PAYMENT" property="inPayment" />
+            	<result column="IN_RECEIPT_ID" property="inReceiptId" />
+            	<result column="ADDRESS" property="address" />
+            	<result column="IN_COMMIT_TIME" property="inCommitTime" />
+            	<result column="IN_STATE" property="inState" />
+            	<result column="IN_SEND_TIME" property="inSendTime" />
+            	<result column="IN_RECEIPT_TIME" property="inReceiptTime" />
+            	<result column="IN_REFUND_TIME" property="inRefundTime" />
+            	<result column="IN_REFUND_FINISH_TIME" property="inRefundFinishTime" />
+            	<result column="IN_REFUND_MONEY" property="inRefundMoney" />
+            	<result column="IN_CARRIAGE" property="inCarriage" />
+            	<result column="IN_INVOICE_TYPE" property="inInvoiceType" />
+            	<result column="IN_INVOICE_COMPANY" property="inInvoiceCompany" />
+            	<result column="IN_CANCEL_TIME" property="inCancelTime" />
+            	<result column="IN_PRIVILEGE_MONEY" property="inPrivilegeMoney" />
+            	<result column="IN_ORIGINAL_MONEY" property="inOriginalMoney" />
+            	<result column="IN_NOW_MONEY" property="inNowMoney" />
+            	<result column="IN_ZF_TIME" property="inZfTime" />
+            	<result column="IN_NAME" property="inName" />
+            	<result column="IN_RECEIPT_PHONE" property="inReceiptPhone" />
+	</resultMap>
+
+	<sql id="TbOrderFindCriteria">
+		<where>
+            <if test="queryId != null and queryId != ''">
+				and id = #{queryId}
+			</if>
+            <if test="queryInNum != null and queryInNum != ''">
+				and IN_NUM = #{queryInNum}
+			</if>
+            <if test="queryUserId != null and queryUserId != ''">
+				and USER_ID = #{queryUserId}
+			</if>
+            <if test="queryInPayment != null and queryInPayment != ''">
+				and IN_PAYMENT = #{queryInPayment}
+			</if>
+            <if test="queryInReceiptId != null and queryInReceiptId != ''">
+				and IN_RECEIPT_ID = #{queryInReceiptId}
+			</if>
+            <if test="queryAddress != null and queryAddress != ''">
+				and ADDRESS = #{queryAddress}
+			</if>
+            <if test="queryInCommitTime != null and queryInCommitTime != ''">
+				and IN_COMMIT_TIME = #{queryInCommitTime}
+			</if>
+            <if test="queryInState != null and queryInState != ''">
+				and IN_STATE = #{queryInState}
+			</if>
+            <if test="queryInSendTime != null and queryInSendTime != ''">
+				and IN_SEND_TIME = #{queryInSendTime}
+			</if>
+            <if test="queryInReceiptTime != null and queryInReceiptTime != ''">
+				and IN_RECEIPT_TIME = #{queryInReceiptTime}
+			</if>
+            <if test="queryInRefundTime != null and queryInRefundTime != ''">
+				and IN_REFUND_TIME = #{queryInRefundTime}
+			</if>
+            <if test="queryInRefundFinishTime != null and queryInRefundFinishTime != ''">
+				and IN_REFUND_FINISH_TIME = #{queryInRefundFinishTime}
+			</if>
+            <if test="queryInRefundMoney != null and queryInRefundMoney != ''">
+				and IN_REFUND_MONEY = #{queryInRefundMoney}
+			</if>
+            <if test="queryInCarriage != null and queryInCarriage != ''">
+				and IN_CARRIAGE = #{queryInCarriage}
+			</if>
+            <if test="queryInInvoiceType != null and queryInInvoiceType != ''">
+				and IN_INVOICE_TYPE = #{queryInInvoiceType}
+			</if>
+            <if test="queryInInvoiceCompany != null and queryInInvoiceCompany != ''">
+				and IN_INVOICE_COMPANY = #{queryInInvoiceCompany}
+			</if>
+            <if test="queryInCancelTime != null and queryInCancelTime != ''">
+				and IN_CANCEL_TIME = #{queryInCancelTime}
+			</if>
+            <if test="queryInPrivilegeMoney != null and queryInPrivilegeMoney != ''">
+				and IN_PRIVILEGE_MONEY = #{queryInPrivilegeMoney}
+			</if>
+            <if test="queryInOriginalMoney != null and queryInOriginalMoney != ''">
+				and IN_ORIGINAL_MONEY = #{queryInOriginalMoney}
+			</if>
+            <if test="queryInNowMoney != null and queryInNowMoney != ''">
+				and IN_NOW_MONEY = #{queryInNowMoney}
+			</if>
+            <if test="queryInZfTime != null and queryInZfTime != ''">
+				and IN_ZF_TIME = #{queryInZfTime}
+			</if>
+            <if test="queryInName != null and queryInName != ''">
+				and IN_NAME = #{queryInName}
+			</if>
+            <if test="queryInReceiptPhone != null and queryInReceiptPhone != ''">
+				and IN_RECEIPT_PHONE = #{queryInReceiptPhone}
+			</if>
+		</where>
+	</sql>
+
+	<sql id="TbOrderUpdateCriteria">
+		<set>
+            <if test="updateId != null and updateId != ''">
+				 id =#{updateId},
+			</if>
+            <if test="updateInNum != null and updateInNum != ''">
+				 IN_NUM =#{updateInNum},
+			</if>
+            <if test="updateUserId != null and updateUserId != ''">
+				 USER_ID =#{updateUserId},
+			</if>
+            <if test="updateInPayment != null and updateInPayment != ''">
+				 IN_PAYMENT =#{updateInPayment},
+			</if>
+            <if test="updateInReceiptId != null and updateInReceiptId != ''">
+				 IN_RECEIPT_ID =#{updateInReceiptId},
+			</if>
+            <if test="updateAddress != null and updateAddress != ''">
+				 ADDRESS =#{updateAddress},
+			</if>
+            <if test="updateInCommitTime != null and updateInCommitTime != ''">
+				 IN_COMMIT_TIME =#{updateInCommitTime},
+			</if>
+            <if test="updateInState != null and updateInState != ''">
+				 IN_STATE =#{updateInState},
+			</if>
+            <if test="updateInSendTime != null and updateInSendTime != ''">
+				 IN_SEND_TIME =#{updateInSendTime},
+			</if>
+            <if test="updateInReceiptTime != null and updateInReceiptTime != ''">
+				 IN_RECEIPT_TIME =#{updateInReceiptTime},
+			</if>
+            <if test="updateInRefundTime != null and updateInRefundTime != ''">
+				 IN_REFUND_TIME =#{updateInRefundTime},
+			</if>
+            <if test="updateInRefundFinishTime != null and updateInRefundFinishTime != ''">
+				 IN_REFUND_FINISH_TIME =#{updateInRefundFinishTime},
+			</if>
+            <if test="updateInRefundMoney != null and updateInRefundMoney != ''">
+				 IN_REFUND_MONEY =#{updateInRefundMoney},
+			</if>
+            <if test="updateInCarriage != null and updateInCarriage != ''">
+				 IN_CARRIAGE =#{updateInCarriage},
+			</if>
+            <if test="updateInInvoiceType != null and updateInInvoiceType != ''">
+				 IN_INVOICE_TYPE =#{updateInInvoiceType},
+			</if>
+            <if test="updateInInvoiceCompany != null and updateInInvoiceCompany != ''">
+				 IN_INVOICE_COMPANY =#{updateInInvoiceCompany},
+			</if>
+            <if test="updateInCancelTime != null and updateInCancelTime != ''">
+				 IN_CANCEL_TIME =#{updateInCancelTime},
+			</if>
+            <if test="updateInPrivilegeMoney != null and updateInPrivilegeMoney != ''">
+				 IN_PRIVILEGE_MONEY =#{updateInPrivilegeMoney},
+			</if>
+            <if test="updateInOriginalMoney != null and updateInOriginalMoney != ''">
+				 IN_ORIGINAL_MONEY =#{updateInOriginalMoney},
+			</if>
+            <if test="updateInNowMoney != null and updateInNowMoney != ''">
+				 IN_NOW_MONEY =#{updateInNowMoney},
+			</if>
+            <if test="updateInZfTime != null and updateInZfTime != ''">
+				 IN_ZF_TIME =#{updateInZfTime},
+			</if>
+            <if test="updateInName != null and updateInName != ''">
+				 IN_NAME =#{updateInName},
+			</if>
+            <if test="updateInReceiptPhone != null and updateInReceiptPhone != ''">
+				 IN_RECEIPT_PHONE =#{updateInReceiptPhone},
+			</if>
+		</set>
+	</sql>
+</mapper> 

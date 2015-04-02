@@ -1,29 +1,81 @@
 package com.my.entity;
 import org.gitchina.framework.commons.dao.entity.Entity;
 /**
- * 用户注册表（家庭成员管理员表）
+ * 
  */
 public class TbUser extends Entity{
-    /**姓名*/
-    private String name;
-    /**年龄*/
-    private String age;
-    /**性别 0--男 1--女*/
-    private String sex;
-    /**邮箱*/
+    /***/
+    private String userName;
+    /***/
+    private String userPassword;
+    /***/
+    private String position;
+    /***/
+    private String phoneNumber;
+    /***/
     private String email;
-    /**手机号*/
-    private String phone;
-    /**密码*/
-    private String password;
-    /**创建时间*/
-    private String time;
-    /**是否激活 0--未激活 1--激活*/
-    private String state;
-    /**激活码*/
-    private String number;
-    /**到期时间*/
-    private String endTime;
+    /***/
+    private String sex;
+    /***/
+    private String name;
+    /***/
+    private String age;
+    /***/
+    private String address;
+    /***/
+    private String userBigLogo;
+    /***/
+    private String userSmallLogo;
+    /***/
+    private String jpushId;
+    /***/
+    private String balance;
+    /***/
+    private String createTime;
+    /***/
+    private String type;
+		public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+		public String getUserPassword() {
+        return userPassword;
+    }
+
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
+    }
+		public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+		public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+		public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+		public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
 		public String getName() {
         return name;
     }
@@ -38,60 +90,53 @@ public class TbUser extends Entity{
     public void setAge(String age) {
         this.age = age;
     }
-		public String getSex() {
-        return sex;
+		public String getAddress() {
+        return address;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setAddress(String address) {
+        this.address = address;
     }
-		public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-		public String getPhone() {
-        return phone;
+		public String getUserBigLogo() {
+        return userBigLogo;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setUserBigLogo(String userBigLogo) {
+        this.userBigLogo = userBigLogo;
     }
-		public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-		public String getTime() {
-        return time;
+		public String getUserSmallLogo() {
+        return userSmallLogo;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setUserSmallLogo(String userSmallLogo) {
+        this.userSmallLogo = userSmallLogo;
     }
-		public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-		public String getNumber() {
-        return number;
+		public String getJpushId() {
+        return jpushId;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setJpushId(String jpushId) {
+        this.jpushId = jpushId;
     }
-		public String getEndTime() {
-        return endTime;
+		public String getBalance() {
+        return balance;
     }
 
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
+    public void setBalance(String balance) {
+        this.balance = balance;
+    }
+		public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+		public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

@@ -52,16 +52,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<tr align="center">
 					<td > <input type="checkbox" id="selectAll" name="selectAll"  ></td>
 					<td >序号</td>
-   					 <td >姓名</td>
-   					 <td >年龄</td>
-   					 <td >性别 0--男 1--女</td>
-   					 <td >邮箱</td>
-   					 <td >手机号</td>
-   					 <td >密码</td>
-   					 <td >创建时间</td>
-   					 <td >是否激活 0--未激活 1--激活</td>
-   					 <td >激活码</td>
-   					 <td >到期时间</td>
+   					 <td ></td>
+   					 <td ></td>
+   					 <td ></td>
+   					 <td ></td>
+   					 <td ></td>
+   					 <td ></td>
+   					 <td ></td>
+   					 <td ></td>
+   					 <td ></td>
+   					 <td ></td>
+   					 <td ></td>
+   					 <td ></td>
+   					 <td ></td>
+   					 <td ></td>
+   					 <td ></td>
 					</tr>
 				</thead>
 					<tbody id="tb_tbody">
@@ -72,25 +77,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		              	  			<td> <input type="checkbox" name="id" id="id" value="${d.id }"></td>
 									<td><span data-toggle="tooltip"   title="${(page.page-1)*page.pageSize+status.index + 1}">${(page.page-1)*page.pageSize+status.index + 1}</span></td>
    									 <td >
+   									 <span  data-toggle="tooltip"   title="${d.userName }">${d.userName }</span></td>
+   									 <td >
+   									 <span  data-toggle="tooltip"   title="${d.userPassword }">${d.userPassword }</span></td>
+   									 <td >
+   									 <span  data-toggle="tooltip"   title="${d.position }">${d.position }</span></td>
+   									 <td >
+   									 <span  data-toggle="tooltip"   title="${d.phoneNumber }">${d.phoneNumber }</span></td>
+   									 <td >
+   									 <span  data-toggle="tooltip"   title="${d.email }">${d.email }</span></td>
+   									 <td >
+   									 <span  data-toggle="tooltip"   title="${d.sex }">${d.sex }</span></td>
+   									 <td >
    									 <span  data-toggle="tooltip"   title="${d.name }">${d.name }</span></td>
    									 <td >
    									 <span  data-toggle="tooltip"   title="${d.age }">${d.age }</span></td>
    									 <td >
-   									 <span  data-toggle="tooltip"   title="${d.sex }">${d.sex }</span></td>
+   									 <span  data-toggle="tooltip"   title="${d.address }">${d.address }</span></td>
    									 <td >
-   									 <span  data-toggle="tooltip"   title="${d.email }">${d.email }</span></td>
+   									 <span  data-toggle="tooltip"   title="${d.userBigLogo }">${d.userBigLogo }</span></td>
    									 <td >
-   									 <span  data-toggle="tooltip"   title="${d.phone }">${d.phone }</span></td>
+   									 <span  data-toggle="tooltip"   title="${d.userSmallLogo }">${d.userSmallLogo }</span></td>
    									 <td >
-   									 <span  data-toggle="tooltip"   title="${d.password }">${d.password }</span></td>
+   									 <span  data-toggle="tooltip"   title="${d.jpushId }">${d.jpushId }</span></td>
    									 <td >
-   									 <span  data-toggle="tooltip"   title="${d.time }">${d.time }</span></td>
+   									 <span  data-toggle="tooltip"   title="${d.balance }">${d.balance }</span></td>
    									 <td >
-   									 <span  data-toggle="tooltip"   title="${d.state }">${d.state }</span></td>
+   									 <span  data-toggle="tooltip"   title="${d.createTime }">${d.createTime }</span></td>
    									 <td >
-   									 <span  data-toggle="tooltip"   title="${d.number }">${d.number }</span></td>
-   									 <td >
-   									 <span  data-toggle="tooltip"   title="${d.endTime }">${d.endTime }</span></td>
+   									 <span  data-toggle="tooltip"   title="${d.type }">${d.type }</span></td>
 									 
 								</tr>
 	                	  </c:forEach>

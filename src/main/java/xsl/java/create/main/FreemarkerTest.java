@@ -26,8 +26,8 @@ import freemarker.template.Template;
 public class FreemarkerTest {
 
     public static void main(String[] args) {
-        Connection connection = JDBCUtil.getConn(DbType.MYSQL,"127.0.0.1/myfamily","root","123");
-        String dbName="myfamily";
+        Connection connection = JDBCUtil.getConn(DbType.MYSQL,"127.0.0.1/supermarkt","root","123");
+        String dbName="supermarkt";
         String path=System.getProperty("user.dir"); //获取项目根目录
         // String path="d:/test";
         generateFile(connection, path, dbName);

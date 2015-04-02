@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="TbReceipt">
+	<resultMap type="TbReceipt" id="TbReceiptResultMap">
+            	<result column="id" property="id" />
+            	<result column="user_id" property="userId" />
+            	<result column="receipt_phone" property="receiptPhone" />
+            	<result column="is_default" property="isDefault" />
+            	<result column="address" property="address" />
+	</resultMap>
+
+	<sql id="TbReceiptFindCriteria">
+		<where>
+            <if test="queryId != null and queryId != ''">
+				and id = #{queryId}
+			</if>
+            <if test="queryUserId != null and queryUserId != ''">
+				and user_id = #{queryUserId}
+			</if>
+            <if test="queryReceiptPhone != null and queryReceiptPhone != ''">
+				and receipt_phone = #{queryReceiptPhone}
+			</if>
+            <if test="queryIsDefault != null and queryIsDefault != ''">
+				and is_default = #{queryIsDefault}
+			</if>
+            <if test="queryAddress != null and queryAddress != ''">
+				and address = #{queryAddress}
+			</if>
+		</where>
+	</sql>
+
+	<sql id="TbReceiptUpdateCriteria">
+		<set>
+            <if test="updateId != null and updateId != ''">
+				 id =#{updateId},
+			</if>
+            <if test="updateUserId != null and updateUserId != ''">
+				 user_id =#{updateUserId},
+			</if>
+            <if test="updateReceiptPhone != null and updateReceiptPhone != ''">
+				 receipt_phone =#{updateReceiptPhone},
+			</if>
+            <if test="updateIsDefault != null and updateIsDefault != ''">
+				 is_default =#{updateIsDefault},
+			</if>
+            <if test="updateAddress != null and updateAddress != ''">
+				 address =#{updateAddress},
+			</if>
+		</set>
+	</sql>
+</mapper> 

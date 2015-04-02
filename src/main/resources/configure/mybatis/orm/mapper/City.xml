@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="City">
+	<resultMap type="City" id="CityResultMap">
+            	<result column="CITY_ID" property="cityId" />
+            	<result column="CITY_NAME" property="cityName" />
+            	<result column="PRO_ID" property="proId" />
+            	<result column="CITY_SORT" property="citySort" />
+	</resultMap>
+
+	<sql id="CityFindCriteria">
+		<where>
+            <if test="queryCityId != null and queryCityId != ''">
+				and CITY_ID = #{queryCityId}
+			</if>
+            <if test="queryCityName != null and queryCityName != ''">
+				and CITY_NAME = #{queryCityName}
+			</if>
+            <if test="queryProId != null and queryProId != ''">
+				and PRO_ID = #{queryProId}
+			</if>
+            <if test="queryCitySort != null and queryCitySort != ''">
+				and CITY_SORT = #{queryCitySort}
+			</if>
+		</where>
+	</sql>
+
+	<sql id="CityUpdateCriteria">
+		<set>
+            <if test="updateCityId != null and updateCityId != ''">
+				 CITY_ID =#{updateCityId},
+			</if>
+            <if test="updateCityName != null and updateCityName != ''">
+				 CITY_NAME =#{updateCityName},
+			</if>
+            <if test="updateProId != null and updateProId != ''">
+				 PRO_ID =#{updateProId},
+			</if>
+            <if test="updateCitySort != null and updateCitySort != ''">
+				 CITY_SORT =#{updateCitySort},
+			</if>
+		</set>
+	</sql>
+</mapper> 

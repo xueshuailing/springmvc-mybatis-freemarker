@@ -2,53 +2,73 @@
 <!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
 <mapper namespace="TbUser">
 	<resultMap type="TbUser" id="TbUserResultMap">
-            	<result column="ID" property="id" />
-            	<result column="NAME" property="name" />
-            	<result column="AGE" property="age" />
-            	<result column="SEX" property="sex" />
-            	<result column="EMAIL" property="email" />
-            	<result column="PHONE" property="phone" />
-            	<result column="PASSWORD" property="password" />
-            	<result column="TIME" property="time" />
-            	<result column="STATE" property="state" />
-            	<result column="NUMBER" property="number" />
-            	<result column="END_TIME" property="endTime" />
+            	<result column="id" property="id" />
+            	<result column="user_name" property="userName" />
+            	<result column="user_password" property="userPassword" />
+            	<result column="position" property="position" />
+            	<result column="phone_number" property="phoneNumber" />
+            	<result column="email" property="email" />
+            	<result column="sex" property="sex" />
+            	<result column="name" property="name" />
+            	<result column="age" property="age" />
+            	<result column="address" property="address" />
+            	<result column="user_big_logo" property="userBigLogo" />
+            	<result column="user_small_logo" property="userSmallLogo" />
+            	<result column="jpush_id" property="jpushId" />
+            	<result column="balance" property="balance" />
+            	<result column="create_time" property="createTime" />
+            	<result column="type" property="type" />
 	</resultMap>
 
 	<sql id="TbUserFindCriteria">
 		<where>
             <if test="queryId != null and queryId != ''">
-				and ID = #{queryId}
+				and id = #{queryId}
 			</if>
-            <if test="queryName != null and queryName != ''">
-				and NAME = #{queryName}
+            <if test="queryUserName != null and queryUserName != ''">
+				and user_name = #{queryUserName}
 			</if>
-            <if test="queryAge != null and queryAge != ''">
-				and AGE = #{queryAge}
+            <if test="queryUserPassword != null and queryUserPassword != ''">
+				and user_password = #{queryUserPassword}
 			</if>
-            <if test="querySex != null and querySex != ''">
-				and SEX = #{querySex}
+            <if test="queryPosition != null and queryPosition != ''">
+				and position = #{queryPosition}
+			</if>
+            <if test="queryPhoneNumber != null and queryPhoneNumber != ''">
+				and phone_number = #{queryPhoneNumber}
 			</if>
             <if test="queryEmail != null and queryEmail != ''">
-				and EMAIL = #{queryEmail}
+				and email = #{queryEmail}
 			</if>
-            <if test="queryPhone != null and queryPhone != ''">
-				and PHONE = #{queryPhone}
+            <if test="querySex != null and querySex != ''">
+				and sex = #{querySex}
 			</if>
-            <if test="queryPassword != null and queryPassword != ''">
-				and PASSWORD = #{queryPassword}
+            <if test="queryName != null and queryName != ''">
+				and name = #{queryName}
 			</if>
-            <if test="queryTime != null and queryTime != ''">
-				and TIME = #{queryTime}
+            <if test="queryAge != null and queryAge != ''">
+				and age = #{queryAge}
 			</if>
-            <if test="queryState != null and queryState != ''">
-				and STATE = #{queryState}
+            <if test="queryAddress != null and queryAddress != ''">
+				and address = #{queryAddress}
 			</if>
-            <if test="queryNumber != null and queryNumber != ''">
-				and NUMBER = #{queryNumber}
+            <if test="queryUserBigLogo != null and queryUserBigLogo != ''">
+				and user_big_logo = #{queryUserBigLogo}
 			</if>
-            <if test="queryEndTime != null and queryEndTime != ''">
-				and END_TIME = #{queryEndTime}
+            <if test="queryUserSmallLogo != null and queryUserSmallLogo != ''">
+				and user_small_logo = #{queryUserSmallLogo}
+			</if>
+            <if test="queryJpushId != null and queryJpushId != ''">
+				and jpush_id = #{queryJpushId}
+			</if>
+            <if test="queryBalance != null and queryBalance != ''">
+				and balance = #{queryBalance}
+			</if>
+            <if test="queryCreateTime != null and queryCreateTime != ''">
+				and create_time = #{queryCreateTime}
+			</if>
+            <if test="queryType != null and queryType != ''">
+				and type = #{queryType}
 			</if>
 		</where>
 	</sql>
@@ -56,37 +76,52 @@
 	<sql id="TbUserUpdateCriteria">
 		<set>
             <if test="updateId != null and updateId != ''">
-				 ID =#{updateId},
+				 id =#{updateId},
 			</if>
-            <if test="updateName != null and updateName != ''">
-				 NAME =#{updateName},
+            <if test="updateUserName != null and updateUserName != ''">
+				 user_name =#{updateUserName},
 			</if>
-            <if test="updateAge != null and updateAge != ''">
-				 AGE =#{updateAge},
+            <if test="updateUserPassword != null and updateUserPassword != ''">
+				 user_password =#{updateUserPassword},
 			</if>
-            <if test="updateSex != null and updateSex != ''">
-				 SEX =#{updateSex},
+            <if test="updatePosition != null and updatePosition != ''">
+				 position =#{updatePosition},
+			</if>
+            <if test="updatePhoneNumber != null and updatePhoneNumber != ''">
+				 phone_number =#{updatePhoneNumber},
 			</if>
             <if test="updateEmail != null and updateEmail != ''">
-				 EMAIL =#{updateEmail},
+				 email =#{updateEmail},
 			</if>
-            <if test="updatePhone != null and updatePhone != ''">
-				 PHONE =#{updatePhone},
+            <if test="updateSex != null and updateSex != ''">
+				 sex =#{updateSex},
 			</if>
-            <if test="updatePassword != null and updatePassword != ''">
-				 PASSWORD =#{updatePassword},
+            <if test="updateName != null and updateName != ''">
+				 name =#{updateName},
 			</if>
-            <if test="updateTime != null and updateTime != ''">
-				 TIME =#{updateTime},
+            <if test="updateAge != null and updateAge != ''">
+				 age =#{updateAge},
 			</if>
-            <if test="updateState != null and updateState != ''">
-				 STATE =#{updateState},
+            <if test="updateAddress != null and updateAddress != ''">
+				 address =#{updateAddress},
 			</if>
-            <if test="updateNumber != null and updateNumber != ''">
-				 NUMBER =#{updateNumber},
+            <if test="updateUserBigLogo != null and updateUserBigLogo != ''">
+				 user_big_logo =#{updateUserBigLogo},
 			</if>
-            <if test="updateEndTime != null and updateEndTime != ''">
-				 END_TIME =#{updateEndTime},
+            <if test="updateUserSmallLogo != null and updateUserSmallLogo != ''">
+				 user_small_logo =#{updateUserSmallLogo},
+			</if>
+            <if test="updateJpushId != null and updateJpushId != ''">
+				 jpush_id =#{updateJpushId},
+			</if>
+            <if test="updateBalance != null and updateBalance != ''">
+				 balance =#{updateBalance},
+			</if>
+            <if test="updateCreateTime != null and updateCreateTime != ''">
+				 create_time =#{updateCreateTime},
+			</if>
+            <if test="updateType != null and updateType != ''">
+				 type =#{updateType},
 			</if>
 		</set>
 	</sql>

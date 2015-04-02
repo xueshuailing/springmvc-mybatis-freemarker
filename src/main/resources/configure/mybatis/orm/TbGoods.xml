@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="TbGoods">
+	<insert id="TbGoods_create" useGeneratedKeys="true" keyProperty="id" parameterType="TbGoods">
+		 
+		INSERT INTO tb_goods
+		(
+            	id,
+            	GOODS_NUMBER,
+            	GOODS_NAME,
+            	GOODS_PRICE,
+            	GOODS_DESCRIBE,
+            	GOODS_CREATE_TIME,
+            	GOODS_CREATE_USER,
+            	GOODS_POSTAGE,
+            	GOODS_SCPRICE,
+            	GOODS_KCCOUNT
+		)
+		VALUES
+		(
+            #{id,jdbcType=INTEGER},
+            #{goodsNumber,jdbcType=VARCHAR},
+            #{goodsName,jdbcType=VARCHAR},
+            #{goodsPrice,jdbcType=DOUBLE},
+            #{goodsDescribe,jdbcType=BLOB},
+            #{goodsCreateTime,jdbcType=DATE},
+            #{goodsCreateUser,jdbcType=INTEGER},
+            #{goodsPostage,jdbcType=DOUBLE},
+            #{goodsScprice,jdbcType=DOUBLE},
+            #{goodsKccount,jdbcType=INTEGER}
+		)
+	</insert>
+	
+	<select id="TbGoods_read" parameterType="map" resultMap="TbGoodsResultMap">
+		select * from tb_goods
+			<include refid="TbGoodsFindCriteria" />
+	</select>
+	
+	<select id="TbGoods_count" parameterType="map" resultType="long">
+		select count(0) from tb_goods
+			<include refid="TbGoodsFindCriteria" />
+	</select>
+	
+	<select id="TbGoods_page" parameterType="map" resultMap="TbGoodsResultMap">
+		select * from tb_goods
+		<include refid="TbGoodsFindCriteria" />
+		<include refid="Public.OrderCriteria" />
+		<include refid="Public.PageCriteria" />
+	</select>
+ 
+	<delete id="TbGoods_delete" parameterType="map">
+		delete from tb_goods 
+		<include refid="TbGoodsFindCriteria" />
+	</delete>
+	
+	<update id="TbGoods_update" parameterType="map">
+		update tb_goods 
+		<include refid="TbGoodsUpdateCriteria"/>
+		<include refid="TbGoodsFindCriteria"/>
+	</update>
+</mapper> 

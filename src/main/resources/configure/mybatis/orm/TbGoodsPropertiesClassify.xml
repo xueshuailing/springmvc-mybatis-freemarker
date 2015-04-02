@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="TbGoodsPropertiesClassify">
+	<insert id="TbGoodsPropertiesClassify_create" useGeneratedKeys="true" keyProperty="id" parameterType="TbGoodsPropertiesClassify">
+		 
+		INSERT INTO tb_goods_properties_classify
+		(
+            	id,
+            	properties_id,
+            	classify_id
+		)
+		VALUES
+		(
+            #{id,jdbcType=INTEGER},
+            #{propertiesId,jdbcType=INTEGER},
+            #{classifyId,jdbcType=INTEGER}
+		)
+	</insert>
+	
+	<select id="TbGoodsPropertiesClassify_read" parameterType="map" resultMap="TbGoodsPropertiesClassifyResultMap">
+		select * from tb_goods_properties_classify
+			<include refid="TbGoodsPropertiesClassifyFindCriteria" />
+	</select>
+	
+	<select id="TbGoodsPropertiesClassify_count" parameterType="map" resultType="long">
+		select count(0) from tb_goods_properties_classify
+			<include refid="TbGoodsPropertiesClassifyFindCriteria" />
+	</select>
+	
+	<select id="TbGoodsPropertiesClassify_page" parameterType="map" resultMap="TbGoodsPropertiesClassifyResultMap">
+		select * from tb_goods_properties_classify
+		<include refid="TbGoodsPropertiesClassifyFindCriteria" />
+		<include refid="Public.OrderCriteria" />
+		<include refid="Public.PageCriteria" />
+	</select>
+ 
+	<delete id="TbGoodsPropertiesClassify_delete" parameterType="map">
+		delete from tb_goods_properties_classify 
+		<include refid="TbGoodsPropertiesClassifyFindCriteria" />
+	</delete>
+	
+	<update id="TbGoodsPropertiesClassify_update" parameterType="map">
+		update tb_goods_properties_classify 
+		<include refid="TbGoodsPropertiesClassifyUpdateCriteria"/>
+		<include refid="TbGoodsPropertiesClassifyFindCriteria"/>
+	</update>
+</mapper> 

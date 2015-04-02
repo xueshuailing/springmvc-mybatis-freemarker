@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="OrderComment">
+	<insert id="OrderComment_create" useGeneratedKeys="true" keyProperty="id" parameterType="OrderComment">
+		 
+		INSERT INTO t_order_comment
+		(
+            	ID,
+            	USER_ID,
+            	COMMENT_TIME,
+            	COMMENT_COTENT,
+            	IS_SHOW,
+            	INDENT_ID,
+            	NAME
+		)
+		VALUES
+		(
+            #{id,jdbcType=INTEGER},
+            #{userId,jdbcType=INTEGER},
+            #{commentTime,jdbcType=DATE},
+            #{commentCotent,jdbcType=VARCHAR},
+            #{isShow,jdbcType=INTEGER},
+            #{indentId,jdbcType=INTEGER},
+            #{name,jdbcType=VARCHAR}
+		)
+	</insert>
+	
+	<select id="OrderComment_read" parameterType="map" resultMap="OrderCommentResultMap">
+		select * from t_order_comment
+			<include refid="OrderCommentFindCriteria" />
+	</select>
+	
+	<select id="OrderComment_count" parameterType="map" resultType="long">
+		select count(0) from t_order_comment
+			<include refid="OrderCommentFindCriteria" />
+	</select>
+	
+	<select id="OrderComment_page" parameterType="map" resultMap="OrderCommentResultMap">
+		select * from t_order_comment
+		<include refid="OrderCommentFindCriteria" />
+		<include refid="Public.OrderCriteria" />
+		<include refid="Public.PageCriteria" />
+	</select>
+ 
+	<delete id="OrderComment_delete" parameterType="map">
+		delete from t_order_comment 
+		<include refid="OrderCommentFindCriteria" />
+	</delete>
+	
+	<update id="OrderComment_update" parameterType="map">
+		update t_order_comment 
+		<include refid="OrderCommentUpdateCriteria"/>
+		<include refid="OrderCommentFindCriteria"/>
+	</update>
+</mapper> 

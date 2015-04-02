@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="Count">
+	<insert id="Count_create" useGeneratedKeys="true" keyProperty="id" parameterType="Count">
+		 
+		INSERT INTO t_count
+		(
+            	ID,
+            	COUNT_NAME,
+            	CITY_ID,
+            	COUNT_SORT
+		)
+		VALUES
+		(
+            #{id,jdbcType=INTEGER},
+            #{countName,jdbcType=VARCHAR},
+            #{cityId,jdbcType=INTEGER},
+            #{countSort,jdbcType=INTEGER}
+		)
+	</insert>
+	
+	<select id="Count_read" parameterType="map" resultMap="CountResultMap">
+		select * from t_count
+			<include refid="CountFindCriteria" />
+	</select>
+	
+	<select id="Count_count" parameterType="map" resultType="long">
+		select count(0) from t_count
+			<include refid="CountFindCriteria" />
+	</select>
+	
+	<select id="Count_page" parameterType="map" resultMap="CountResultMap">
+		select * from t_count
+		<include refid="CountFindCriteria" />
+		<include refid="Public.OrderCriteria" />
+		<include refid="Public.PageCriteria" />
+	</select>
+ 
+	<delete id="Count_delete" parameterType="map">
+		delete from t_count 
+		<include refid="CountFindCriteria" />
+	</delete>
+	
+	<update id="Count_update" parameterType="map">
+		update t_count 
+		<include refid="CountUpdateCriteria"/>
+		<include refid="CountFindCriteria"/>
+	</update>
+</mapper> 

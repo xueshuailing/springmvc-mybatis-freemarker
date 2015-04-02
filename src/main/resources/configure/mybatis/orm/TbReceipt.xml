@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="TbReceipt">
+	<insert id="TbReceipt_create" useGeneratedKeys="true" keyProperty="id" parameterType="TbReceipt">
+		 
+		INSERT INTO tb_receipt
+		(
+            	id,
+            	user_id,
+            	receipt_phone,
+            	is_default,
+            	address
+		)
+		VALUES
+		(
+            #{id,jdbcType=INTEGER},
+            #{userId,jdbcType=INTEGER},
+            #{receiptPhone,jdbcType=VARCHAR},
+            #{isDefault,jdbcType=INTEGER},
+            #{address,jdbcType=VARCHAR}
+		)
+	</insert>
+	
+	<select id="TbReceipt_read" parameterType="map" resultMap="TbReceiptResultMap">
+		select * from tb_receipt
+			<include refid="TbReceiptFindCriteria" />
+	</select>
+	
+	<select id="TbReceipt_count" parameterType="map" resultType="long">
+		select count(0) from tb_receipt
+			<include refid="TbReceiptFindCriteria" />
+	</select>
+	
+	<select id="TbReceipt_page" parameterType="map" resultMap="TbReceiptResultMap">
+		select * from tb_receipt
+		<include refid="TbReceiptFindCriteria" />
+		<include refid="Public.OrderCriteria" />
+		<include refid="Public.PageCriteria" />
+	</select>
+ 
+	<delete id="TbReceipt_delete" parameterType="map">
+		delete from tb_receipt 
+		<include refid="TbReceiptFindCriteria" />
+	</delete>
+	
+	<update id="TbReceipt_update" parameterType="map">
+		update tb_receipt 
+		<include refid="TbReceiptUpdateCriteria"/>
+		<include refid="TbReceiptFindCriteria"/>
+	</update>
+</mapper> 

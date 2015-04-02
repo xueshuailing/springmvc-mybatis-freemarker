@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.my.service.TbUserService;
 import com.my.entity.TbUser;
 /**
- * 用户注册表（家庭成员管理员表）controller层
+ * controller层
  */
 @Controller
 @RequestMapping(value = "/my/tbuser")

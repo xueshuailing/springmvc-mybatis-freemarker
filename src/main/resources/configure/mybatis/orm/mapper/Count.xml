@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="Count">
+	<resultMap type="Count" id="CountResultMap">
+            	<result column="ID" property="id" />
+            	<result column="COUNT_NAME" property="countName" />
+            	<result column="CITY_ID" property="cityId" />
+            	<result column="COUNT_SORT" property="countSort" />
+	</resultMap>
+
+	<sql id="CountFindCriteria">
+		<where>
+            <if test="queryId != null and queryId != ''">
+				and ID = #{queryId}
+			</if>
+            <if test="queryCountName != null and queryCountName != ''">
+				and COUNT_NAME = #{queryCountName}
+			</if>
+            <if test="queryCityId != null and queryCityId != ''">
+				and CITY_ID = #{queryCityId}
+			</if>
+            <if test="queryCountSort != null and queryCountSort != ''">
+				and COUNT_SORT = #{queryCountSort}
+			</if>
+		</where>
+	</sql>
+
+	<sql id="CountUpdateCriteria">
+		<set>
+            <if test="updateId != null and updateId != ''">
+				 ID =#{updateId},
+			</if>
+            <if test="updateCountName != null and updateCountName != ''">
+				 COUNT_NAME =#{updateCountName},
+			</if>
+            <if test="updateCityId != null and updateCityId != ''">
+				 CITY_ID =#{updateCityId},
+			</if>
+            <if test="updateCountSort != null and updateCountSort != ''">
+				 COUNT_SORT =#{updateCountSort},
+			</if>
+		</set>
+	</sql>
+</mapper> 

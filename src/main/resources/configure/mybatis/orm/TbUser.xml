@@ -5,31 +5,41 @@
 		 
 		INSERT INTO tb_user
 		(
-            	ID,
-            	NAME,
-            	AGE,
-            	SEX,
-            	EMAIL,
-            	PHONE,
-            	PASSWORD,
-            	TIME,
-            	STATE,
-            	NUMBER,
-            	END_TIME
+            	id,
+            	user_name,
+            	user_password,
+            	position,
+            	phone_number,
+            	email,
+            	sex,
+            	name,
+            	age,
+            	address,
+            	user_big_logo,
+            	user_small_logo,
+            	jpush_id,
+            	balance,
+            	create_time,
+            	type
 		)
 		VALUES
 		(
             #{id,jdbcType=INTEGER},
+            #{userName,jdbcType=VARCHAR},
+            #{userPassword,jdbcType=VARCHAR},
+            #{position,jdbcType=VARCHAR},
+            #{phoneNumber,jdbcType=VARCHAR},
+            #{email,jdbcType=VARCHAR},
+            #{sex,jdbcType=INTEGER},
             #{name,jdbcType=VARCHAR},
             #{age,jdbcType=INTEGER},
-            #{sex,jdbcType=INTEGER},
-            #{email,jdbcType=VARCHAR},
-            #{phone,jdbcType=VARCHAR},
-            #{password,jdbcType=VARCHAR},
-            #{time,jdbcType=DATE},
-            #{state,jdbcType=INTEGER},
-            #{number,jdbcType=VARCHAR},
-            #{endTime,jdbcType=DATE}
+            #{address,jdbcType=VARCHAR},
+            #{userBigLogo,jdbcType=VARCHAR},
+            #{userSmallLogo,jdbcType=VARCHAR},
+            #{jpushId,jdbcType=VARCHAR},
+            #{balance,jdbcType=DOUBLE},
+            #{createTime,jdbcType=DATE},
+            #{type,jdbcType=INTEGER}
 		)
 	</insert>
 	

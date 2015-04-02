@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="TbOrder">
+	<insert id="TbOrder_create" useGeneratedKeys="true" keyProperty="id" parameterType="TbOrder">
+		 
+		INSERT INTO tb_order
+		(
+            	id,
+            	IN_NUM,
+            	USER_ID,
+            	IN_PAYMENT,
+            	IN_RECEIPT_ID,
+            	ADDRESS,
+            	IN_COMMIT_TIME,
+            	IN_STATE,
+            	IN_SEND_TIME,
+            	IN_RECEIPT_TIME,
+            	IN_REFUND_TIME,
+            	IN_REFUND_FINISH_TIME,
+            	IN_REFUND_MONEY,
+            	IN_CARRIAGE,
+            	IN_INVOICE_TYPE,
+            	IN_INVOICE_COMPANY,
+            	IN_CANCEL_TIME,
+            	IN_PRIVILEGE_MONEY,
+            	IN_ORIGINAL_MONEY,
+            	IN_NOW_MONEY,
+            	IN_ZF_TIME,
+            	IN_NAME,
+            	IN_RECEIPT_PHONE
+		)
+		VALUES
+		(
+            #{id,jdbcType=INTEGER},
+            #{inNum,jdbcType=VARCHAR},
+            #{userId,jdbcType=INTEGER},
+            #{inPayment,jdbcType=INTEGER},
+            #{inReceiptId,jdbcType=INTEGER},
+            #{address,jdbcType=VARCHAR},
+            #{inCommitTime,jdbcType=DATE},
+            #{inState,jdbcType=INTEGER},
+            #{inSendTime,jdbcType=DATE},
+            #{inReceiptTime,jdbcType=DATE},
+            #{inRefundTime,jdbcType=DATE},
+            #{inRefundFinishTime,jdbcType=DATE},
+            #{inRefundMoney,jdbcType=DOUBLE},
+            #{inCarriage,jdbcType=DOUBLE},
+            #{inInvoiceType,jdbcType=INTEGER},
+            #{inInvoiceCompany,jdbcType=VARCHAR},
+            #{inCancelTime,jdbcType=DATE},
+            #{inPrivilegeMoney,jdbcType=DOUBLE},
+            #{inOriginalMoney,jdbcType=DOUBLE},
+            #{inNowMoney,jdbcType=DOUBLE},
+            #{inZfTime,jdbcType=DATE},
+            #{inName,jdbcType=VARCHAR},
+            #{inReceiptPhone,jdbcType=VARCHAR}
+		)
+	</insert>
+	
+	<select id="TbOrder_read" parameterType="map" resultMap="TbOrderResultMap">
+		select * from tb_order
+			<include refid="TbOrderFindCriteria" />
+	</select>
+	
+	<select id="TbOrder_count" parameterType="map" resultType="long">
+		select count(0) from tb_order
+			<include refid="TbOrderFindCriteria" />
+	</select>
+	
+	<select id="TbOrder_page" parameterType="map" resultMap="TbOrderResultMap">
+		select * from tb_order
+		<include refid="TbOrderFindCriteria" />
+		<include refid="Public.OrderCriteria" />
+		<include refid="Public.PageCriteria" />
+	</select>
+ 
+	<delete id="TbOrder_delete" parameterType="map">
+		delete from tb_order 
+		<include refid="TbOrderFindCriteria" />
+	</delete>
+	
+	<update id="TbOrder_update" parameterType="map">
+		update tb_order 
+		<include refid="TbOrderUpdateCriteria"/>
+		<include refid="TbOrderFindCriteria"/>
+	</update>
+</mapper> 

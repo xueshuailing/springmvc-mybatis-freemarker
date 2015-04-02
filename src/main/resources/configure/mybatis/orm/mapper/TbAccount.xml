@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="TbAccount">
+	<resultMap type="TbAccount" id="TbAccountResultMap">
+            	<result column="id" property="id" />
+            	<result column="user_id" property="userId" />
+            	<result column="create_date" property="createDate" />
+            	<result column="money" property="money" />
+	</resultMap>
+
+	<sql id="TbAccountFindCriteria">
+		<where>
+            <if test="queryId != null and queryId != ''">
+				and id = #{queryId}
+			</if>
+            <if test="queryUserId != null and queryUserId != ''">
+				and user_id = #{queryUserId}
+			</if>
+            <if test="queryCreateDate != null and queryCreateDate != ''">
+				and create_date = #{queryCreateDate}
+			</if>
+            <if test="queryMoney != null and queryMoney != ''">
+				and money = #{queryMoney}
+			</if>
+		</where>
+	</sql>
+
+	<sql id="TbAccountUpdateCriteria">
+		<set>
+            <if test="updateId != null and updateId != ''">
+				 id =#{updateId},
+			</if>
+            <if test="updateUserId != null and updateUserId != ''">
+				 user_id =#{updateUserId},
+			</if>
+            <if test="updateCreateDate != null and updateCreateDate != ''">
+				 create_date =#{updateCreateDate},
+			</if>
+            <if test="updateMoney != null and updateMoney != ''">
+				 money =#{updateMoney},
+			</if>
+		</set>
+	</sql>
+</mapper> 

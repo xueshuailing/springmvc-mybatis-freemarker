@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="TbEstate">
+	<insert id="TbEstate_create" useGeneratedKeys="true" keyProperty="id" parameterType="TbEstate">
+		 
+		INSERT INTO tb_estate
+		(
+            	id,
+            	create_date,
+            	name,
+            	introduction,
+            	address,
+            	pro_id,
+            	count_id,
+            	city_id
+		)
+		VALUES
+		(
+            #{id,jdbcType=INTEGER},
+            #{createDate,jdbcType=DATE},
+            #{name,jdbcType=VARCHAR},
+            #{introduction,jdbcType=BLOB},
+            #{address,jdbcType=VARCHAR},
+            #{proId,jdbcType=INTEGER},
+            #{countId,jdbcType=INTEGER},
+            #{cityId,jdbcType=INTEGER}
+		)
+	</insert>
+	
+	<select id="TbEstate_read" parameterType="map" resultMap="TbEstateResultMap">
+		select * from tb_estate
+			<include refid="TbEstateFindCriteria" />
+	</select>
+	
+	<select id="TbEstate_count" parameterType="map" resultType="long">
+		select count(0) from tb_estate
+			<include refid="TbEstateFindCriteria" />
+	</select>
+	
+	<select id="TbEstate_page" parameterType="map" resultMap="TbEstateResultMap">
+		select * from tb_estate
+		<include refid="TbEstateFindCriteria" />
+		<include refid="Public.OrderCriteria" />
+		<include refid="Public.PageCriteria" />
+	</select>
+ 
+	<delete id="TbEstate_delete" parameterType="map">
+		delete from tb_estate 
+		<include refid="TbEstateFindCriteria" />
+	</delete>
+	
+	<update id="TbEstate_update" parameterType="map">
+		update tb_estate 
+		<include refid="TbEstateUpdateCriteria"/>
+		<include refid="TbEstateFindCriteria"/>
+	</update>
+</mapper> 

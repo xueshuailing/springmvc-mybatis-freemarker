@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="TbGoodsProperties">
+	<insert id="TbGoodsProperties_create" useGeneratedKeys="true" keyProperty="id" parameterType="TbGoodsProperties">
+		 
+		INSERT INTO tb_goods_properties
+		(
+            	id,
+            	name,
+            	is_many,
+            	parent_id,
+            	is_public
+		)
+		VALUES
+		(
+            #{id,jdbcType=INTEGER},
+            #{name,jdbcType=VARCHAR},
+            #{isMany,jdbcType=INTEGER},
+            #{parentId,jdbcType=INTEGER},
+            #{isPublic,jdbcType=INTEGER}
+		)
+	</insert>
+	
+	<select id="TbGoodsProperties_read" parameterType="map" resultMap="TbGoodsPropertiesResultMap">
+		select * from tb_goods_properties
+			<include refid="TbGoodsPropertiesFindCriteria" />
+	</select>
+	
+	<select id="TbGoodsProperties_count" parameterType="map" resultType="long">
+		select count(0) from tb_goods_properties
+			<include refid="TbGoodsPropertiesFindCriteria" />
+	</select>
+	
+	<select id="TbGoodsProperties_page" parameterType="map" resultMap="TbGoodsPropertiesResultMap">
+		select * from tb_goods_properties
+		<include refid="TbGoodsPropertiesFindCriteria" />
+		<include refid="Public.OrderCriteria" />
+		<include refid="Public.PageCriteria" />
+	</select>
+ 
+	<delete id="TbGoodsProperties_delete" parameterType="map">
+		delete from tb_goods_properties 
+		<include refid="TbGoodsPropertiesFindCriteria" />
+	</delete>
+	
+	<update id="TbGoodsProperties_update" parameterType="map">
+		update tb_goods_properties 
+		<include refid="TbGoodsPropertiesUpdateCriteria"/>
+		<include refid="TbGoodsPropertiesFindCriteria"/>
+	</update>
+</mapper> 

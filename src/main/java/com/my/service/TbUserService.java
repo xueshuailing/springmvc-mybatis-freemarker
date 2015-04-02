@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.my.dao.TbUserDao;
 import com.my.entity.TbUser;
 /**
- * 用户注册表（家庭成员管理员表）service层
+ * service层
  */
 @Service
 @Transactional
@@ -37,35 +37,50 @@ public class TbUserService {
 		if(t.getId()!=0){
 			parameter.addQuery("id", t.getId());
 		}
+		if(StringUtils.isNotBlank(t.getUserName())){
+			parameter.addQuery("userName", t.getUserName());
+		}
+		if(StringUtils.isNotBlank(t.getUserPassword())){
+			parameter.addQuery("userPassword", t.getUserPassword());
+		}
+		if(StringUtils.isNotBlank(t.getPosition())){
+			parameter.addQuery("position", t.getPosition());
+		}
+		if(StringUtils.isNotBlank(t.getPhoneNumber())){
+			parameter.addQuery("phoneNumber", t.getPhoneNumber());
+		}
+		if(StringUtils.isNotBlank(t.getEmail())){
+			parameter.addQuery("email", t.getEmail());
+		}
+		if(StringUtils.isNotBlank(t.getSex())){
+			parameter.addQuery("sex", t.getSex());
+		}
 		if(StringUtils.isNotBlank(t.getName())){
 			parameter.addQuery("name", t.getName());
 		}
 		if(StringUtils.isNotBlank(t.getAge())){
 			parameter.addQuery("age", t.getAge());
 		}
-		if(StringUtils.isNotBlank(t.getSex())){
-			parameter.addQuery("sex", t.getSex());
+		if(StringUtils.isNotBlank(t.getAddress())){
+			parameter.addQuery("address", t.getAddress());
 		}
-		if(StringUtils.isNotBlank(t.getEmail())){
-			parameter.addQuery("email", t.getEmail());
+		if(StringUtils.isNotBlank(t.getUserBigLogo())){
+			parameter.addQuery("userBigLogo", t.getUserBigLogo());
 		}
-		if(StringUtils.isNotBlank(t.getPhone())){
-			parameter.addQuery("phone", t.getPhone());
+		if(StringUtils.isNotBlank(t.getUserSmallLogo())){
+			parameter.addQuery("userSmallLogo", t.getUserSmallLogo());
 		}
-		if(StringUtils.isNotBlank(t.getPassword())){
-			parameter.addQuery("password", t.getPassword());
+		if(StringUtils.isNotBlank(t.getJpushId())){
+			parameter.addQuery("jpushId", t.getJpushId());
 		}
-		if(StringUtils.isNotBlank(t.getTime())){
-			parameter.addQuery("time", t.getTime());
+		if(StringUtils.isNotBlank(t.getBalance())){
+			parameter.addQuery("balance", t.getBalance());
 		}
-		if(StringUtils.isNotBlank(t.getState())){
-			parameter.addQuery("state", t.getState());
+		if(StringUtils.isNotBlank(t.getCreateTime())){
+			parameter.addQuery("createTime", t.getCreateTime());
 		}
-		if(StringUtils.isNotBlank(t.getNumber())){
-			parameter.addQuery("number", t.getNumber());
-		}
-		if(StringUtils.isNotBlank(t.getEndTime())){
-			parameter.addQuery("endTime", t.getEndTime());
+		if(StringUtils.isNotBlank(t.getType())){
+			parameter.addQuery("type", t.getType());
 		}
 		this.tbUserDao.delete(parameter);
 	}
@@ -84,35 +99,50 @@ public class TbUserService {
 	public void update(TbUser t) throws Exception{
 		SqlParameter parameter=SqlParameter.getSqlParameter();
 		parameter.addQuery("id", t.getId());
+		if(StringUtils.isNotBlank(t.getUserName())){
+			parameter.addUpdate("userName", t.getUserName());
+		}
+		if(StringUtils.isNotBlank(t.getUserPassword())){
+			parameter.addUpdate("userPassword", t.getUserPassword());
+		}
+		if(StringUtils.isNotBlank(t.getPosition())){
+			parameter.addUpdate("position", t.getPosition());
+		}
+		if(StringUtils.isNotBlank(t.getPhoneNumber())){
+			parameter.addUpdate("phoneNumber", t.getPhoneNumber());
+		}
+		if(StringUtils.isNotBlank(t.getEmail())){
+			parameter.addUpdate("email", t.getEmail());
+		}
+		if(StringUtils.isNotBlank(t.getSex())){
+			parameter.addUpdate("sex", t.getSex());
+		}
 		if(StringUtils.isNotBlank(t.getName())){
 			parameter.addUpdate("name", t.getName());
 		}
 		if(StringUtils.isNotBlank(t.getAge())){
 			parameter.addUpdate("age", t.getAge());
 		}
-		if(StringUtils.isNotBlank(t.getSex())){
-			parameter.addUpdate("sex", t.getSex());
+		if(StringUtils.isNotBlank(t.getAddress())){
+			parameter.addUpdate("address", t.getAddress());
 		}
-		if(StringUtils.isNotBlank(t.getEmail())){
-			parameter.addUpdate("email", t.getEmail());
+		if(StringUtils.isNotBlank(t.getUserBigLogo())){
+			parameter.addUpdate("userBigLogo", t.getUserBigLogo());
 		}
-		if(StringUtils.isNotBlank(t.getPhone())){
-			parameter.addUpdate("phone", t.getPhone());
+		if(StringUtils.isNotBlank(t.getUserSmallLogo())){
+			parameter.addUpdate("userSmallLogo", t.getUserSmallLogo());
 		}
-		if(StringUtils.isNotBlank(t.getPassword())){
-			parameter.addUpdate("password", t.getPassword());
+		if(StringUtils.isNotBlank(t.getJpushId())){
+			parameter.addUpdate("jpushId", t.getJpushId());
 		}
-		if(StringUtils.isNotBlank(t.getTime())){
-			parameter.addUpdate("time", t.getTime());
+		if(StringUtils.isNotBlank(t.getBalance())){
+			parameter.addUpdate("balance", t.getBalance());
 		}
-		if(StringUtils.isNotBlank(t.getState())){
-			parameter.addUpdate("state", t.getState());
+		if(StringUtils.isNotBlank(t.getCreateTime())){
+			parameter.addUpdate("createTime", t.getCreateTime());
 		}
-		if(StringUtils.isNotBlank(t.getNumber())){
-			parameter.addUpdate("number", t.getNumber());
-		}
-		if(StringUtils.isNotBlank(t.getEndTime())){
-			parameter.addUpdate("endTime", t.getEndTime());
+		if(StringUtils.isNotBlank(t.getType())){
+			parameter.addUpdate("type", t.getType());
 		}
 		this.tbUserDao.update(parameter);
 	}
@@ -138,35 +168,50 @@ public class TbUserService {
 		if(t.getId()!=0){
 			parameter.addQuery("id", t.getId());
 		}
+		if(StringUtils.isNotBlank(t.getUserName())){
+			parameter.addQuery("userName", t.getUserName());
+		}
+		if(StringUtils.isNotBlank(t.getUserPassword())){
+			parameter.addQuery("userPassword", t.getUserPassword());
+		}
+		if(StringUtils.isNotBlank(t.getPosition())){
+			parameter.addQuery("position", t.getPosition());
+		}
+		if(StringUtils.isNotBlank(t.getPhoneNumber())){
+			parameter.addQuery("phoneNumber", t.getPhoneNumber());
+		}
+		if(StringUtils.isNotBlank(t.getEmail())){
+			parameter.addQuery("email", t.getEmail());
+		}
+		if(StringUtils.isNotBlank(t.getSex())){
+			parameter.addQuery("sex", t.getSex());
+		}
 		if(StringUtils.isNotBlank(t.getName())){
 			parameter.addQuery("name", t.getName());
 		}
 		if(StringUtils.isNotBlank(t.getAge())){
 			parameter.addQuery("age", t.getAge());
 		}
-		if(StringUtils.isNotBlank(t.getSex())){
-			parameter.addQuery("sex", t.getSex());
+		if(StringUtils.isNotBlank(t.getAddress())){
+			parameter.addQuery("address", t.getAddress());
 		}
-		if(StringUtils.isNotBlank(t.getEmail())){
-			parameter.addQuery("email", t.getEmail());
+		if(StringUtils.isNotBlank(t.getUserBigLogo())){
+			parameter.addQuery("userBigLogo", t.getUserBigLogo());
 		}
-		if(StringUtils.isNotBlank(t.getPhone())){
-			parameter.addQuery("phone", t.getPhone());
+		if(StringUtils.isNotBlank(t.getUserSmallLogo())){
+			parameter.addQuery("userSmallLogo", t.getUserSmallLogo());
 		}
-		if(StringUtils.isNotBlank(t.getPassword())){
-			parameter.addQuery("password", t.getPassword());
+		if(StringUtils.isNotBlank(t.getJpushId())){
+			parameter.addQuery("jpushId", t.getJpushId());
 		}
-		if(StringUtils.isNotBlank(t.getTime())){
-			parameter.addQuery("time", t.getTime());
+		if(StringUtils.isNotBlank(t.getBalance())){
+			parameter.addQuery("balance", t.getBalance());
 		}
-		if(StringUtils.isNotBlank(t.getState())){
-			parameter.addQuery("state", t.getState());
+		if(StringUtils.isNotBlank(t.getCreateTime())){
+			parameter.addQuery("createTime", t.getCreateTime());
 		}
-		if(StringUtils.isNotBlank(t.getNumber())){
-			parameter.addQuery("number", t.getNumber());
-		}
-		if(StringUtils.isNotBlank(t.getEndTime())){
-			parameter.addQuery("endTime", t.getEndTime());
+		if(StringUtils.isNotBlank(t.getType())){
+			parameter.addQuery("type", t.getType());
 		}
 		parameter.addPageNo((pageNo-1)*pageSize);
 		parameter.addPageSize(pageSize);

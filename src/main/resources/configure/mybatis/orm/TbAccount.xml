@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="TbAccount">
+	<insert id="TbAccount_create" useGeneratedKeys="true" keyProperty="id" parameterType="TbAccount">
+		 
+		INSERT INTO tb_account
+		(
+            	id,
+            	user_id,
+            	create_date,
+            	money
+		)
+		VALUES
+		(
+            #{id,jdbcType=INTEGER},
+            #{userId,jdbcType=INTEGER},
+            #{createDate,jdbcType=DATE},
+            #{money,jdbcType=DOUBLE}
+		)
+	</insert>
+	
+	<select id="TbAccount_read" parameterType="map" resultMap="TbAccountResultMap">
+		select * from tb_account
+			<include refid="TbAccountFindCriteria" />
+	</select>
+	
+	<select id="TbAccount_count" parameterType="map" resultType="long">
+		select count(0) from tb_account
+			<include refid="TbAccountFindCriteria" />
+	</select>
+	
+	<select id="TbAccount_page" parameterType="map" resultMap="TbAccountResultMap">
+		select * from tb_account
+		<include refid="TbAccountFindCriteria" />
+		<include refid="Public.OrderCriteria" />
+		<include refid="Public.PageCriteria" />
+	</select>
+ 
+	<delete id="TbAccount_delete" parameterType="map">
+		delete from tb_account 
+		<include refid="TbAccountFindCriteria" />
+	</delete>
+	
+	<update id="TbAccount_update" parameterType="map">
+		update tb_account 
+		<include refid="TbAccountUpdateCriteria"/>
+		<include refid="TbAccountFindCriteria"/>
+	</update>
+</mapper> 

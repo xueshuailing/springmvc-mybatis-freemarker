@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="TbEstateInfo">
+	<resultMap type="TbEstateInfo" id="TbEstateInfoResultMap">
+            	<result column="ID" property="id" />
+            	<result column="title" property="title" />
+            	<result column="content" property="content" />
+            	<result column="estate_id" property="estateId" />
+            	<result column="create_time" property="createTime" />
+	</resultMap>
+
+	<sql id="TbEstateInfoFindCriteria">
+		<where>
+            <if test="queryId != null and queryId != ''">
+				and ID = #{queryId}
+			</if>
+            <if test="queryTitle != null and queryTitle != ''">
+				and title = #{queryTitle}
+			</if>
+            <if test="queryContent != null and queryContent != ''">
+				and content = #{queryContent}
+			</if>
+            <if test="queryEstateId != null and queryEstateId != ''">
+				and estate_id = #{queryEstateId}
+			</if>
+            <if test="queryCreateTime != null and queryCreateTime != ''">
+				and create_time = #{queryCreateTime}
+			</if>
+		</where>
+	</sql>
+
+	<sql id="TbEstateInfoUpdateCriteria">
+		<set>
+            <if test="updateId != null and updateId != ''">
+				 ID =#{updateId},
+			</if>
+            <if test="updateTitle != null and updateTitle != ''">
+				 title =#{updateTitle},
+			</if>
+            <if test="updateContent != null and updateContent != ''">
+				 content =#{updateContent},
+			</if>
+            <if test="updateEstateId != null and updateEstateId != ''">
+				 estate_id =#{updateEstateId},
+			</if>
+            <if test="updateCreateTime != null and updateCreateTime != ''">
+				 create_time =#{updateCreateTime},
+			</if>
+		</set>
+	</sql>
+</mapper> 
