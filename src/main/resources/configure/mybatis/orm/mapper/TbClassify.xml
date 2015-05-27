@@ -5,6 +5,7 @@
             	<result column="id" property="id" />
             	<result column="name" property="name" />
             	<result column="parent_id" property="parentId" />
+            	<result column="url" property="url" />
 	</resultMap>
 
 	<sql id="TbClassifyFindCriteria">
@@ -17,6 +18,9 @@
 			</if>
             <if test="queryParentId != null and queryParentId != ''">
 				and parent_id = #{queryParentId}
+			</if>
+            <if test="queryUrl != null and queryUrl != ''">
+				and url = #{queryUrl}
 			</if>
 		</where>
 	</sql>
@@ -31,6 +35,9 @@
 			</if>
             <if test="updateParentId != null and updateParentId != ''">
 				 parent_id =#{updateParentId},
+			</if>
+            <if test="updateUrl != null and updateUrl != ''">
+				 url =#{updateUrl},
 			</if>
 		</set>
 	</sql>

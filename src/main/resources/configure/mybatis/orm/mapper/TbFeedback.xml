@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="TbFeedback">
+	<resultMap type="TbFeedback" id="TbFeedbackResultMap">
+            	<result column="ID" property="id" />
+            	<result column="PHONE" property="phone" />
+            	<result column="OPINION" property="opinion" />
+            	<result column="USER_ID" property="userId" />
+            	<result column="DATE_TIME" property="dateTime" />
+            	<result column="USER_NAME" property="userName" />
+	</resultMap>
+
+	<sql id="TbFeedbackFindCriteria">
+		<where>
+            <if test="queryId != null and queryId != ''">
+				and ID = #{queryId}
+			</if>
+            <if test="queryPhone != null and queryPhone != ''">
+				and PHONE = #{queryPhone}
+			</if>
+            <if test="queryOpinion != null and queryOpinion != ''">
+				and OPINION = #{queryOpinion}
+			</if>
+            <if test="queryUserId != null and queryUserId != ''">
+				and USER_ID = #{queryUserId}
+			</if>
+            <if test="queryDateTime != null and queryDateTime != ''">
+				and DATE_TIME = #{queryDateTime}
+			</if>
+            <if test="queryUserName != null and queryUserName != ''">
+				and USER_NAME = #{queryUserName}
+			</if>
+		</where>
+	</sql>
+
+	<sql id="TbFeedbackUpdateCriteria">
+		<set>
+            <if test="updateId != null and updateId != ''">
+				 ID =#{updateId},
+			</if>
+            <if test="updatePhone != null and updatePhone != ''">
+				 PHONE =#{updatePhone},
+			</if>
+            <if test="updateOpinion != null and updateOpinion != ''">
+				 OPINION =#{updateOpinion},
+			</if>
+            <if test="updateUserId != null and updateUserId != ''">
+				 USER_ID =#{updateUserId},
+			</if>
+            <if test="updateDateTime != null and updateDateTime != ''">
+				 DATE_TIME =#{updateDateTime},
+			</if>
+            <if test="updateUserName != null and updateUserName != ''">
+				 USER_NAME =#{updateUserName},
+			</if>
+		</set>
+	</sql>
+</mapper> 

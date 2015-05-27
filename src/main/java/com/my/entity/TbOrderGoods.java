@@ -14,6 +14,8 @@ public class TbOrderGoods extends Entity{
     private String inNumber;
     /***/
     private String goodsCount;
+    /***/
+    private String goodsPrice;
 		public String getGoodsId() {
         return goodsId;
     }
@@ -48,5 +50,12 @@ public class TbOrderGoods extends Entity{
 
     public void setGoodsCount(String goodsCount) {
         this.goodsCount = goodsCount;
+    }
+		public String getGoodsPrice() {
+        return goodsPrice;
+    }
+
+    public void setGoodsPrice(String goodsPrice) {
+        this.goodsPrice = goodsPrice;
     }
 }

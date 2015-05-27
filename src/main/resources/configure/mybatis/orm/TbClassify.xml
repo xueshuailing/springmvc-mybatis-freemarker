@@ -7,13 +7,15 @@
 		(
             	id,
             	name,
-            	parent_id
+            	parent_id,
+            	url
 		)
 		VALUES
 		(
             #{id,jdbcType=INTEGER},
             #{name,jdbcType=VARCHAR},
-            #{parentId,jdbcType=INTEGER}
+            #{parentId,jdbcType=INTEGER},
+            #{url,jdbcType=VARCHAR}
 		)
 	</insert>
 	

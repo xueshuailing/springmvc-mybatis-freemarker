@@ -11,7 +11,8 @@
             	COMMENT_COTENT,
             	IS_SHOW,
             	INDENT_ID,
-            	NAME
+            	NAME,
+            	score
 		)
 		VALUES
 		(
@@ -21,7 +22,8 @@
             #{commentCotent,jdbcType=VARCHAR},
             #{isShow,jdbcType=INTEGER},
             #{indentId,jdbcType=INTEGER},
-            #{name,jdbcType=VARCHAR}
+            #{name,jdbcType=VARCHAR},
+            #{score,jdbcType=DOUBLE}
 		)
 	</insert>
 	

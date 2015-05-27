@@ -7,6 +7,10 @@
             	<result column="receipt_phone" property="receiptPhone" />
             	<result column="is_default" property="isDefault" />
             	<result column="address" property="address" />
+            	<result column="receipt_name" property="receiptName" />
+            	<result column="pro_id" property="proId" />
+            	<result column="city_id" property="cityId" />
+            	<result column="count_id" property="countId" />
 	</resultMap>
 
 	<sql id="TbReceiptFindCriteria">
@@ -25,6 +29,18 @@
 			</if>
             <if test="queryAddress != null and queryAddress != ''">
 				and address = #{queryAddress}
+			</if>
+            <if test="queryReceiptName != null and queryReceiptName != ''">
+				and receipt_name = #{queryReceiptName}
+			</if>
+            <if test="queryProId != null and queryProId != ''">
+				and pro_id = #{queryProId}
+			</if>
+            <if test="queryCityId != null and queryCityId != ''">
+				and city_id = #{queryCityId}
+			</if>
+            <if test="queryCountId != null and queryCountId != ''">
+				and count_id = #{queryCountId}
 			</if>
 		</where>
 	</sql>
@@ -45,6 +61,18 @@
 			</if>
             <if test="updateAddress != null and updateAddress != ''">
 				 address =#{updateAddress},
+			</if>
+            <if test="updateReceiptName != null and updateReceiptName != ''">
+				 receipt_name =#{updateReceiptName},
+			</if>
+            <if test="updateProId != null and updateProId != ''">
+				 pro_id =#{updateProId},
+			</if>
+            <if test="updateCityId != null and updateCityId != ''">
+				 city_id =#{updateCityId},
+			</if>
+            <if test="updateCountId != null and updateCountId != ''">
+				 count_id =#{updateCountId},
 			</if>
 		</set>
 	</sql>

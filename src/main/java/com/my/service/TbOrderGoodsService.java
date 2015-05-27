@@ -52,6 +52,9 @@ public class TbOrderGoodsService {
 		if(StringUtils.isNotBlank(t.getGoodsCount())){
 			parameter.addQuery("goodsCount", t.getGoodsCount());
 		}
+		if(StringUtils.isNotBlank(t.getGoodsPrice())){
+			parameter.addQuery("goodsPrice", t.getGoodsPrice());
+		}
 		this.tbOrderGoodsDao.delete(parameter);
 	}
 	/**
@@ -83,6 +86,9 @@ public class TbOrderGoodsService {
 		}
 		if(StringUtils.isNotBlank(t.getGoodsCount())){
 			parameter.addUpdate("goodsCount", t.getGoodsCount());
+		}
+		if(StringUtils.isNotBlank(t.getGoodsPrice())){
+			parameter.addUpdate("goodsPrice", t.getGoodsPrice());
 		}
 		this.tbOrderGoodsDao.update(parameter);
 	}
@@ -122,6 +128,9 @@ public class TbOrderGoodsService {
 		}
 		if(StringUtils.isNotBlank(t.getGoodsCount())){
 			parameter.addQuery("goodsCount", t.getGoodsCount());
+		}
+		if(StringUtils.isNotBlank(t.getGoodsPrice())){
+			parameter.addQuery("goodsPrice", t.getGoodsPrice());
 		}
 		parameter.addPageNo((pageNo-1)*pageSize);
 		parameter.addPageSize(pageSize);

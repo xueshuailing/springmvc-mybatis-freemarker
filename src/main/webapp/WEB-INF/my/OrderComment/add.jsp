@@ -63,6 +63,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<input type="text" class="form-control" id="name" name="name" placeholder=""     required   onkeydown="if(event.keyCode==32) return false"    >
 				</div> 
 			</div>
+			<div class="form-group" >
+				<label for="scorediv" class="col-sm-2 control-label" >
+					<strong>：</strong>
+				</label>
+				<div class="input-group col-sm-6" id="scorediv">
+					<input type="text" class="form-control" id="score" name="score" placeholder=""     required   onkeydown="if(event.keyCode==32) return false"    >
+				</div> 
+			</div>
 			</form>
       </div>
       <div class="modal-footer">

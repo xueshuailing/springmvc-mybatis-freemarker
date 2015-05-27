@@ -54,6 +54,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<td >序号</td>
    					 <td ></td>
    					 <td ></td>
+   					 <td ></td>
 					</tr>
 				</thead>
 					<tbody id="tb_tbody">
@@ -67,6 +68,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    									 <span  data-toggle="tooltip"   title="${d.name }">${d.name }</span></td>
    									 <td >
    									 <span  data-toggle="tooltip"   title="${d.parentId }">${d.parentId }</span></td>
+   									 <td >
+   									 <span  data-toggle="tooltip"   title="${d.url }">${d.url }</span></td>
 									 
 								</tr>
 	                	  </c:forEach>

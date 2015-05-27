@@ -16,6 +16,8 @@ public class OrderComment extends Entity{
     private String indentId;
     /***/
     private String name;
+    /***/
+    private String score;
 		public String getUserId() {
         return userId;
     }
@@ -57,5 +59,12 @@ public class OrderComment extends Entity{
 
     public void setName(String name) {
         this.name = name;
+    }
+		public String getScore() {
+        return score;
+    }
+
+    public void setScore(String score) {
+        this.score = score;
     }
 }

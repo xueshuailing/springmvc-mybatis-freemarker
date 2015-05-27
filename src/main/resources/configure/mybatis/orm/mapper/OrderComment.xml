@@ -9,6 +9,7 @@
             	<result column="IS_SHOW" property="isShow" />
             	<result column="INDENT_ID" property="indentId" />
             	<result column="NAME" property="name" />
+            	<result column="score" property="score" />
 	</resultMap>
 
 	<sql id="OrderCommentFindCriteria">
@@ -33,6 +34,9 @@
 			</if>
             <if test="queryName != null and queryName != ''">
 				and NAME = #{queryName}
+			</if>
+            <if test="queryScore != null and queryScore != ''">
+				and score = #{queryScore}
 			</if>
 		</where>
 	</sql>
@@ -59,6 +63,9 @@
 			</if>
             <if test="updateName != null and updateName != ''">
 				 NAME =#{updateName},
+			</if>
+            <if test="updateScore != null and updateScore != ''">
+				 score =#{updateScore},
 			</if>
 		</set>
 	</sql>

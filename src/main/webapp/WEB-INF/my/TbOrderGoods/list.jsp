@@ -57,6 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    					 <td ></td>
    					 <td ></td>
    					 <td ></td>
+   					 <td ></td>
 					</tr>
 				</thead>
 					<tbody id="tb_tbody">
@@ -76,6 +77,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    									 <span  data-toggle="tooltip"   title="${d.inNumber }">${d.inNumber }</span></td>
    									 <td >
    									 <span  data-toggle="tooltip"   title="${d.goodsCount }">${d.goodsCount }</span></td>
+   									 <td >
+   									 <span  data-toggle="tooltip"   title="${d.goodsPrice }">${d.goodsPrice }</span></td>
 									 
 								</tr>
 	                	  </c:forEach>

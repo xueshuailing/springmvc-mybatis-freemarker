@@ -13,6 +13,14 @@ public class TbReceipt extends Entity{
     private String isDefault;
     /***/
     private String address;
+    /***/
+    private String receiptName;
+    /***/
+    private String proId;
+    /***/
+    private String cityId;
+    /***/
+    private String countId;
 		public String getUserId() {
         return userId;
     }
@@ -40,5 +48,33 @@ public class TbReceipt extends Entity{
 
     public void setAddress(String address) {
         this.address = address;
+    }
+		public String getReceiptName() {
+        return receiptName;
+    }
+
+    public void setReceiptName(String receiptName) {
+        this.receiptName = receiptName;
+    }
+		public String getProId() {
+        return proId;
+    }
+
+    public void setProId(String proId) {
+        this.proId = proId;
+    }
+		public String getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(String cityId) {
+        this.cityId = cityId;
+    }
+		public String getCountId() {
+        return countId;
+    }
+
+    public void setCountId(String countId) {
+        this.countId = countId;
     }
 }

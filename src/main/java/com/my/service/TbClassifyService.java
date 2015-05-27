@@ -43,6 +43,9 @@ public class TbClassifyService {
 		if(StringUtils.isNotBlank(t.getParentId())){
 			parameter.addQuery("parentId", t.getParentId());
 		}
+		if(StringUtils.isNotBlank(t.getUrl())){
+			parameter.addQuery("url", t.getUrl());
+		}
 		this.tbClassifyDao.delete(parameter);
 	}
 	/**
@@ -65,6 +68,9 @@ public class TbClassifyService {
 		}
 		if(StringUtils.isNotBlank(t.getParentId())){
 			parameter.addUpdate("parentId", t.getParentId());
+		}
+		if(StringUtils.isNotBlank(t.getUrl())){
+			parameter.addUpdate("url", t.getUrl());
 		}
 		this.tbClassifyDao.update(parameter);
 	}
@@ -95,6 +101,9 @@ public class TbClassifyService {
 		}
 		if(StringUtils.isNotBlank(t.getParentId())){
 			parameter.addQuery("parentId", t.getParentId());
+		}
+		if(StringUtils.isNotBlank(t.getUrl())){
+			parameter.addQuery("url", t.getUrl());
 		}
 		parameter.addPageNo((pageNo-1)*pageSize);
 		parameter.addPageSize(pageSize);

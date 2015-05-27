@@ -8,6 +8,7 @@
             	<result column="in_id" property="inId" />
             	<result column="in_number" property="inNumber" />
             	<result column="goods_count" property="goodsCount" />
+            	<result column="goods_price" property="goodsPrice" />
 	</resultMap>
 
 	<sql id="TbOrderGoodsFindCriteria">
@@ -29,6 +30,9 @@
 			</if>
             <if test="queryGoodsCount != null and queryGoodsCount != ''">
 				and goods_count = #{queryGoodsCount}
+			</if>
+            <if test="queryGoodsPrice != null and queryGoodsPrice != ''">
+				and goods_price = #{queryGoodsPrice}
 			</if>
 		</where>
 	</sql>
@@ -52,6 +56,9 @@
 			</if>
             <if test="updateGoodsCount != null and updateGoodsCount != ''">
 				 goods_count =#{updateGoodsCount},
+			</if>
+            <if test="updateGoodsPrice != null and updateGoodsPrice != ''">
+				 goods_price =#{updateGoodsPrice},
 			</if>
 		</set>
 	</sql>

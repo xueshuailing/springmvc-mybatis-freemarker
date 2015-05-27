@@ -49,6 +49,38 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<input type="text" class="form-control" id="address" name="address" placeholder=""     required   onkeydown="if(event.keyCode==32) return false"    >
 				</div> 
 			</div>
+			<div class="form-group" >
+				<label for="receiptNamediv" class="col-sm-2 control-label" >
+					<strong>：</strong>
+				</label>
+				<div class="input-group col-sm-6" id="receiptNamediv">
+					<input type="text" class="form-control" id="receiptName" name="receiptName" placeholder=""     required   onkeydown="if(event.keyCode==32) return false"    >
+				</div> 
+			</div>
+			<div class="form-group" >
+				<label for="proIddiv" class="col-sm-2 control-label" >
+					<strong>：</strong>
+				</label>
+				<div class="input-group col-sm-6" id="proIddiv">
+					<input type="text" class="form-control" id="proId" name="proId" placeholder=""     required   onkeydown="if(event.keyCode==32) return false"    >
+				</div> 
+			</div>
+			<div class="form-group" >
+				<label for="cityIddiv" class="col-sm-2 control-label" >
+					<strong>：</strong>
+				</label>
+				<div class="input-group col-sm-6" id="cityIddiv">
+					<input type="text" class="form-control" id="cityId" name="cityId" placeholder=""     required   onkeydown="if(event.keyCode==32) return false"    >
+				</div> 
+			</div>
+			<div class="form-group" >
+				<label for="countIddiv" class="col-sm-2 control-label" >
+					<strong>：</strong>
+				</label>
+				<div class="input-group col-sm-6" id="countIddiv">
+					<input type="text" class="form-control" id="countId" name="countId" placeholder=""     required   onkeydown="if(event.keyCode==32) return false"    >
+				</div> 
+			</div>
 			</form>
       </div>
       <div class="modal-footer">

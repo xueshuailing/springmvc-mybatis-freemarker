@@ -10,7 +10,8 @@
             	goods_number,
             	in_id,
             	in_number,
-            	goods_count
+            	goods_count,
+            	goods_price
 		)
 		VALUES
 		(
@@ -19,7 +20,8 @@
             #{goodsNumber,jdbcType=VARCHAR},
             #{inId,jdbcType=INTEGER},
             #{inNumber,jdbcType=VARCHAR},
-            #{goodsCount,jdbcType=INTEGER}
+            #{goodsCount,jdbcType=INTEGER},
+            #{goodsPrice,jdbcType=DOUBLE}
 		)
 	</insert>
 	

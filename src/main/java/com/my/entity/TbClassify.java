@@ -8,6 +8,8 @@ public class TbClassify extends Entity{
     private String name;
     /***/
     private String parentId;
+    /***/
+    private String url;
 		public String getName() {
         return name;
     }
@@ -21,5 +23,12 @@ public class TbClassify extends Entity{
 
     public void setParentId(String parentId) {
         this.parentId = parentId;
+    }
+		public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

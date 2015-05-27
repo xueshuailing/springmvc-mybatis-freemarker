@@ -55,6 +55,9 @@ public class OrderCommentService {
 		if(StringUtils.isNotBlank(t.getName())){
 			parameter.addQuery("name", t.getName());
 		}
+		if(StringUtils.isNotBlank(t.getScore())){
+			parameter.addQuery("score", t.getScore());
+		}
 		this.orderCommentDao.delete(parameter);
 	}
 	/**
@@ -89,6 +92,9 @@ public class OrderCommentService {
 		}
 		if(StringUtils.isNotBlank(t.getName())){
 			parameter.addUpdate("name", t.getName());
+		}
+		if(StringUtils.isNotBlank(t.getScore())){
+			parameter.addUpdate("score", t.getScore());
 		}
 		this.orderCommentDao.update(parameter);
 	}
@@ -131,6 +137,9 @@ public class OrderCommentService {
 		}
 		if(StringUtils.isNotBlank(t.getName())){
 			parameter.addQuery("name", t.getName());
+		}
+		if(StringUtils.isNotBlank(t.getScore())){
+			parameter.addQuery("score", t.getScore());
 		}
 		parameter.addPageNo((pageNo-1)*pageSize);
 		parameter.addPageSize(pageSize);

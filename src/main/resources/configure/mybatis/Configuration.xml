@@ -21,6 +21,8 @@
 	  		<!-- mybatis别名 -->
     		<typeAlias alias="TbEstateInfo" type="com.my.entity.TbEstateInfo"/>
 	  		<!-- mybatis别名 -->
+    		<typeAlias alias="TbFeedback" type="com.my.entity.TbFeedback"/>
+	  		<!-- mybatis别名 -->
     		<typeAlias alias="TbFoodsafety" type="com.my.entity.TbFoodsafety"/>
 	  		<!-- mybatis别名 -->
     		<typeAlias alias="TbGoods" type="com.my.entity.TbGoods"/>
@@ -93,6 +95,11 @@
 	  		<!--  配置文件路径-->
     		 <mapper resource="configure/mybatis/orm/mapper/TbEstateInfo.xml"/>
 	  		 <mapper resource="configure/mybatis/orm/TbEstateInfo.xml"/>
+	  		 
+	  		 
+	  		<!--  配置文件路径-->
+    		 <mapper resource="configure/mybatis/orm/mapper/TbFeedback.xml"/>
+	  		 <mapper resource="configure/mybatis/orm/TbFeedback.xml"/>
 	  		 
 	  		 
 	  		<!--  配置文件路径-->

@@ -22,7 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  <form class="form-horizontal" role="form" id="serch" method="post" action="<%=basePath%>my/tbreceipt/query.html">
+  <form class="form-horizontal" role="form" id="serch" method="post" action="<%=basePath%>my/tbfeedback/query.html">
   <div class="form-group">
      
   </div>
@@ -52,14 +52,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<tr align="center">
 					<td > <input type="checkbox" id="selectAll" name="selectAll"  ></td>
 					<td >序号</td>
-   					 <td ></td>
-   					 <td ></td>
-   					 <td >0--不是默认收货地址
-            1--是默认收货地址</td>
-   					 <td ></td>
-   					 <td ></td>
-   					 <td ></td>
-   					 <td ></td>
+   					 <td >联系方式</td>
+   					 <td >反馈内容</td>
+   					 <td >员工id</td>
+   					 <td >创建时间</td>
    					 <td ></td>
 					</tr>
 				</thead>
@@ -71,21 +67,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		              	  			<td> <input type="checkbox" name="id" id="id" value="${d.id }"></td>
 									<td><span data-toggle="tooltip"   title="${(page.page-1)*page.pageSize+status.index + 1}">${(page.page-1)*page.pageSize+status.index + 1}</span></td>
    									 <td >
+   									 <span  data-toggle="tooltip"   title="${d.phone }">${d.phone }</span></td>
+   									 <td >
+   									 <span  data-toggle="tooltip"   title="${d.opinion }">${d.opinion }</span></td>
+   									 <td >
    									 <span  data-toggle="tooltip"   title="${d.userId }">${d.userId }</span></td>
    									 <td >
-   									 <span  data-toggle="tooltip"   title="${d.receiptPhone }">${d.receiptPhone }</span></td>
+   									 <span  data-toggle="tooltip"   title="${d.dateTime }">${d.dateTime }</span></td>
    									 <td >
-   									 <span  data-toggle="tooltip"   title="${d.isDefault }">${d.isDefault }</span></td>
-   									 <td >
-   									 <span  data-toggle="tooltip"   title="${d.address }">${d.address }</span></td>
-   									 <td >
-   									 <span  data-toggle="tooltip"   title="${d.receiptName }">${d.receiptName }</span></td>
-   									 <td >
-   									 <span  data-toggle="tooltip"   title="${d.proId }">${d.proId }</span></td>
-   									 <td >
-   									 <span  data-toggle="tooltip"   title="${d.cityId }">${d.cityId }</span></td>
-   									 <td >
-   									 <span  data-toggle="tooltip"   title="${d.countId }">${d.countId }</span></td>
+   									 <span  data-toggle="tooltip"   title="${d.userName }">${d.userName }</span></td>
 									 
 								</tr>
 	                	  </c:forEach>
@@ -104,7 +94,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 </div>
 <!-- 添加弹出窗口 -->
-<jsp:include  page="/WEB-INF/my/TbReceipt/add.jsp" flush="true"/> 
+<jsp:include  page="/WEB-INF/my/TbFeedback/add.jsp" flush="true"/> 
 		<!-- 日期插件js -->
 	<script src="<%=basePath%>common/datepicker/date-range.js"></script>
 	<script src="<%=basePath%>common/page/jquery.twbsPagination.js"></script>
@@ -124,7 +114,7 @@ $(function () {
         totalPages: ${page.pageCount},//总页数
         startPage:${page.page},//当前页
         visiblePages: 7,
-         href: '<%=basePath%>my/tbreceipt/query.html?pageNo={{number}}',
+         href: '<%=basePath%>my/tbfeedback/query.html?pageNo={{number}}',
         onPageClick: function (event, page) {
             $('#page-content').text('Page ' + page);
         }

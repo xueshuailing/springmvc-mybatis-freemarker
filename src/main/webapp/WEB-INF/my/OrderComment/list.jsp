@@ -58,6 +58,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    					 <td >0-不-显示 1--显示</td>
    					 <td ></td>
    					 <td ></td>
+   					 <td ></td>
 					</tr>
 				</thead>
 					<tbody id="tb_tbody">
@@ -79,6 +80,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    									 <span  data-toggle="tooltip"   title="${d.indentId }">${d.indentId }</span></td>
    									 <td >
    									 <span  data-toggle="tooltip"   title="${d.name }">${d.name }</span></td>
+   									 <td >
+   									 <span  data-toggle="tooltip"   title="${d.score }">${d.score }</span></td>
 									 
 								</tr>
 	                	  </c:forEach>

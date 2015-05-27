@@ -49,6 +49,18 @@ public class TbReceiptService {
 		if(StringUtils.isNotBlank(t.getAddress())){
 			parameter.addQuery("address", t.getAddress());
 		}
+		if(StringUtils.isNotBlank(t.getReceiptName())){
+			parameter.addQuery("receiptName", t.getReceiptName());
+		}
+		if(StringUtils.isNotBlank(t.getProId())){
+			parameter.addQuery("proId", t.getProId());
+		}
+		if(StringUtils.isNotBlank(t.getCityId())){
+			parameter.addQuery("cityId", t.getCityId());
+		}
+		if(StringUtils.isNotBlank(t.getCountId())){
+			parameter.addQuery("countId", t.getCountId());
+		}
 		this.tbReceiptDao.delete(parameter);
 	}
 	/**
@@ -77,6 +89,18 @@ public class TbReceiptService {
 		}
 		if(StringUtils.isNotBlank(t.getAddress())){
 			parameter.addUpdate("address", t.getAddress());
+		}
+		if(StringUtils.isNotBlank(t.getReceiptName())){
+			parameter.addUpdate("receiptName", t.getReceiptName());
+		}
+		if(StringUtils.isNotBlank(t.getProId())){
+			parameter.addUpdate("proId", t.getProId());
+		}
+		if(StringUtils.isNotBlank(t.getCityId())){
+			parameter.addUpdate("cityId", t.getCityId());
+		}
+		if(StringUtils.isNotBlank(t.getCountId())){
+			parameter.addUpdate("countId", t.getCountId());
 		}
 		this.tbReceiptDao.update(parameter);
 	}
@@ -113,6 +137,18 @@ public class TbReceiptService {
 		}
 		if(StringUtils.isNotBlank(t.getAddress())){
 			parameter.addQuery("address", t.getAddress());
+		}
+		if(StringUtils.isNotBlank(t.getReceiptName())){
+			parameter.addQuery("receiptName", t.getReceiptName());
+		}
+		if(StringUtils.isNotBlank(t.getProId())){
+			parameter.addQuery("proId", t.getProId());
+		}
+		if(StringUtils.isNotBlank(t.getCityId())){
+			parameter.addQuery("cityId", t.getCityId());
+		}
+		if(StringUtils.isNotBlank(t.getCountId())){
+			parameter.addQuery("countId", t.getCountId());
 		}
 		parameter.addPageNo((pageNo-1)*pageSize);
 		parameter.addPageSize(pageSize);

@@ -9,7 +9,11 @@
             	user_id,
             	receipt_phone,
             	is_default,
-            	address
+            	address,
+            	receipt_name,
+            	pro_id,
+            	city_id,
+            	count_id
 		)
 		VALUES
 		(
@@ -17,7 +21,11 @@
             #{userId,jdbcType=INTEGER},
             #{receiptPhone,jdbcType=VARCHAR},
             #{isDefault,jdbcType=INTEGER},
-            #{address,jdbcType=VARCHAR}
+            #{address,jdbcType=VARCHAR},
+            #{receiptName,jdbcType=VARCHAR},
+            #{proId,jdbcType=INTEGER},
+            #{cityId,jdbcType=INTEGER},
+            #{countId,jdbcType=INTEGER}
 		)
 	</insert>
 	
